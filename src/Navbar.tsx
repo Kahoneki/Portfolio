@@ -5,7 +5,7 @@ function Navbar()
     let location = useLocation()
 return (
     <>
-    <div className="flex justify-between h-16 items-center">
+    <div className="flex flex-row justify-between h-16 items-center bg-sidebar">
         <a href="./" className={(location.pathname == "/" ? "hidden " : "") + "flex-1 text-center"}>Home</a>
         <a href="./about" className="flex-1 text-center">About</a>
         <a href="./portfolio" className="flex-1 text-center">Portfolio</a>

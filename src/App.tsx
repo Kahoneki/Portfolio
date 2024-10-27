@@ -10,7 +10,7 @@ return (
 
   <BrowserRouter>
   {/* Main page */}
-  <div className="bg-stone-800 text-stone-50 h-screen">
+  <div className="bg-background text-text h-screen">
     {/* Page content */}
     <div>
       {/* BrowserRouter element will be replaced with Route element for appropriate path lookup
@@ -26,6 +26,7 @@ return (
 
   </div>
   </BrowserRouter>
+
   </>
 )
 }
