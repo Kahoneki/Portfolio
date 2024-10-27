@@ -5,15 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      background: '#FDEEF5',
-      sidebar: '#FFAFBC',
-      text: '#59002A',
-    },
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        background: '#FDEEF5',
+        sidebar: '#FFAFBC',
+        text: '#59002A',
+        contentSeparator: '#FF5D77'
+      },
+    },
   },
   plugins: [],
 }

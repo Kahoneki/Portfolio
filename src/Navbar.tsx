@@ -6,7 +6,7 @@ function Navbar()
 return (
     <>
     <div className="flex flex-row justify-between h-16 items-center bg-sidebar">
-        <a href="./" className={(location.pathname == "/" ? "hidden " : "") + "flex-1 text-center"}>Home</a>
+        {location.pathname == "/" ? <></> : <a href="./" className="flex-1 text-center">Home</a>}
         <a href="./about" className="flex-1 text-center">About</a>
         <a href="./portfolio" className="flex-1 text-center">Portfolio</a>
         <a href="./contact" className="flex-1 text-center">Contact</a>

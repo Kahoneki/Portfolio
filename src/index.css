@@ -14,3 +14,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+   @apply text-contentSeparator !important;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-contentSeparator !important;
+}
