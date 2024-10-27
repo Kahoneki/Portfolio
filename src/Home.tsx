@@ -10,7 +10,44 @@ import 'swiper/swiper-bundle.css';
 function Home()
 {
 
-    const carouselFilepaths = ["Boids.jpg", "Earth Renderer.jpg", "Grass Renderer.jpg", "Ocean Wave Simulation.jpg", "Portal Renderer.jpg", "Post Processing.jpg", "TotallyNotMinecraft.jpg"]
+    const carousel = [
+        {
+            path: "Earth Renderer.jpg",
+            title: "Dynamic Tesselation",
+            description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset"
+        },
+        {
+            path: "Ocean Wave Simulation.jpg",
+            title: "Ocean Wave Simulation",
+            description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
+        },
+        {
+          path: "Boids.jpg",
+          title: "Boids",
+          description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
+        },
+        {
+            path: "Grass Renderer.jpg",
+            title: "Grass Renderer",
+            description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm"
+        },
+        {
+            path: "Portal Renderer.jpg",
+            title: "Portal Renderer",
+            description: "Implementation of an advanced stencil buffer rendering technique"
+        },
+        {
+          path: "TotallyNotMinecraft.jpg",
+          title: "Unity Voxel Engine",
+          description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
+        },
+        {
+            path: "Post Processing.jpg",
+            title: "Post-Processing",
+            description: "Off-screen deferred-rendering with MSAA anti-aliasing, saturation, fog, and vignetting"
+        },
+
+      ];
 
 return (
     <>
@@ -40,7 +77,7 @@ return (
             navigation
             pagination
             spaceBetween={50}
-            slidesPerView={1.2}
+            slidesPerView={1.25}
             centeredSlides={true}
             loop={true}
             onSlideChange={() => console.log('slide change')}
@@ -48,8 +85,12 @@ return (
             >
             
             {
-                carouselFilepaths.map(path => (
-                    <SwiperSlide><img className="object-cover h-full" src={"/Images/Carousel/" + path}></img></SwiperSlide>
+                carousel.map(c => (
+                    <SwiperSlide className="">
+                        <img className="object-cover h-5/6 w-full" src={"/Images/Carousel/" + c.path}></img>
+                        <p className="text-center text-text font-bold">{c.title}</p>
+                        <p className="text-center text-text">{c.description}</p>
+                    </SwiperSlide>
                 ))
             }
             </Swiper>
