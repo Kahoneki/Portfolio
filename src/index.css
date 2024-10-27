@@ -18,8 +18,14 @@
 .swiper-button-prev,
 .swiper-button-next {
    @apply text-contentSeparator !important;
+   @apply -translate-y-16 !important;
 }
 
 .swiper-pagination-bullet-active {
   @apply bg-contentSeparator !important;
+}
+
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  @apply translate-y-1 !important;
 }

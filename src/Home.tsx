@@ -67,11 +67,11 @@ return (
         {/* Main content */}
         <div className="flex flex-col flex-1 w-3/4">
             <Navbar></Navbar>
-            <div className="text-black p-8 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px] border-l-[8px]">
+            <div className="text-black pt-8 px-8 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px] border-l-[8px]">
             <Swiper className="h-full"
             modules={[Autoplay, Navigation, Pagination]}
             autoplay={{
-                delay: 3000, // Set delay in ms (3 seconds here)
+                delay: 5000, // Set delay in ms
                 disableOnInteraction: false, // Continues autoplay after user interaction
               }}
             navigation
@@ -88,7 +88,7 @@ return (
                 carousel.map(c => (
                     <SwiperSlide className="">
                         <img className="object-cover h-5/6 w-full" src={"/Images/Carousel/" + c.path}></img>
-                        <p className="text-center text-text font-bold">{c.title}</p>
+                        <p className="mt-4 text-center text-text font-bold">{c.title}</p>
                         <p className="text-center text-text">{c.description}</p>
                     </SwiperSlide>
                 ))

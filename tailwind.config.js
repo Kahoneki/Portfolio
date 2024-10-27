@@ -13,6 +13,7 @@ export default {
         background: '#FDEEF5',
         sidebar: '#FFAFBC',
         text: '#59002A',
+        linkHover: '#FFD6DD',
         contentSeparator: '#FF5D77'
       },
     },
