@@ -57,19 +57,48 @@ function PortfolioItemPage()
             ],
         },
 
-        //
+        //Ocean Wave Simulation
         {
-            title:"",
-            topLevelImgPath: "",
+            title:"Ocean Wave Simulation",
+            topLevelImgPath: "Ocean Wave Simulation.jpg",
             topLevelDescription: [
-                "",
+                "'Sum of Sines' is a famous algorithm for faking water waves in a real-time context. It involves adding up random sine waves of differing amplitudes, frequencies, directions, and speeds to use as heightmap data.",
+                "'Lambertian Diffuse + Blinn Phong Specular' is a classic lighting model that involves summing an ambient light component to imitate global illumination with a diffuse component and a specular component to imitate reflections.",
+                "In this project, I combine both Sum of Sines and Lambertian Diffuse + Blinn Phong Specular alongside a skybox and fresnel to control the reflections.",
+                "I am aware of and interested in looking into more advanced models such as utilising the Fast Fourier Transform.",
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
                 {
-                    imgPath:"",
+                    imgPath:"Wave Progress 1.jpeg",
                     description: [
-                        "",
+                        "3D perspective camera with a subdivided plane being vertically displaced according to a sine wave.",
+                    ]
+                },
+                {
+                    imgPath:"Wave Progress 2.jpeg",
+                    description: [
+                        "Summing up multiple (2) sine waves going in different directions.",
+                    ]
+                },
+                {
+                    imgPath:"Wave Progress 3.jpeg",
+                    description: [
+                        "Waves of differing amplitude, frequency, direction, and speed.",
+                        "Lambertian diffuse shading also added at this point.",
+                    ]
+                },
+                {
+                    imgPath:"Wave Progress 4.jpeg",
+                    description: [
+                        "Chose more appropriate colours and wave parameters",
+                        "Added backface culling",
+                    ]
+                },
+                {
+                    imgPath:"Wave Progress 5.jpeg",
+                    description: [
+                        "First attempt at specular reflections",
                     ]
                 },
             ],
@@ -92,7 +121,7 @@ function PortfolioItemPage()
 
                 {/* Description */}
                 <div className="flex flex-col h-full m-4 p-4 gap-y-4 bg-contentSeparator rounded-3xl">
-                    <h1 className="h-1/5 p-4 bg-linkHover rounded-3xl text-4xl font-bold">{itemPageInfo[i].title}</h1>
+                    <h1 className="h-1/5 pl-4 py-8 bg-linkHover rounded-3xl text-4xl font-bold">{itemPageInfo[i].title}</h1>
                     {
                         itemPageInfo[i].topLevelDescription.map(d => (
                             <p className="flex-1 p-4 bg-linkHover rounded-3xl">{d}</p>
