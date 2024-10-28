@@ -104,6 +104,157 @@ function PortfolioItemPage()
             ],
         },
 
+        //Online Multiplayer Fighting Game
+        {
+            title:"Online Multiplayer Fighting Game",
+            topLevelImgPath: "Limb 4 Limb.png",
+            topLevelDescription: [
+                "For my 1st year C++ Games Programming coursework project, I made an online real-time fighting game in SFML.",
+                "It uses a client-server model with a combined TCP/UDP protocol and a (somewhat) sophisticated structure to maintain synchronisation between clients. The server runs on an oracle linux web instance.",
+                "In addition, this project makes use of databases to allow users to create accounts and have their online ranking saved to the server, as well as send match invitations to their friends. The database is handled using the SQLite library.",
+                "It also features 5 levels of AI difficulty to choose between for a singleplayer mode and a local mode for both players to play on the same computer.",
+                "This project achieved an A+ and was put on the \"Hall of Fame\" to serve as an exemplary project for students the following year.",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+            ],
+        },
+
+        //Boids
+        {
+            title:"Boids",
+            topLevelImgPath: "Boids.jpg",
+            topLevelDescription: [
+                "This algorithm is a common method for simulating flocking behaviour found in birds, fish, bees, etc. By applying just a few simple rules, a very realistic-seeming emergent system is formed.",
+                "A compute shader invocation can be ran for each individual boid as the action of one boid on a particular frame does not influence the action of any other boid on the same frame.",
+                "This utilises the immense parallel processing power of the GPU - such an algorithm would not be possible if ran sequentially.",
+                "This algorithm also makes use of ping-pong buffering to avoid read-write syncing issues",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+            ],
+        },
+
+        //Grass Renderer
+        {
+            title:"Grass Renderer",
+            topLevelImgPath: "Grass Renderer.jpg",
+            topLevelDescription: [
+                "The main time-bottleneck of rendering lots of meshes in real-time is CPU-GPU communication. To be able to render a dense grass field such as this (4 million blades), making millions of draw calls a frame will simply not suffice.",
+                "An instanced draw call will combine multiple draw calls into a single one (i.e. rather than \"Hey draw this. Hey draw this again. Hey draw this again. Hey draw this aga-\", you could simply say \"Hey draw this 4 million times\"), eliminating the CPU-GPU communication bottleneck.",
+                "Throughout this project, I learnt how to overcome challenges that are encountered when instancing on the GPU - namely, not having access to CPU-side per-instance information like positional data. The solution for this project was to use the bit-representation of the instance id to generate an x and z position."
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"Grass Progress 1.jpeg",
+                    description: [
+                        "Created a strip-geometry plane generation algorithm with dynamic x-y resolution and size parameters.",
+                    ]
+                },
+                {
+                    imgPath:"Grass Progress 2.jpeg",
+                    description: [
+                        "Added height to terrain with perlin noise texture lookup.",
+                    ]
+                },
+                {
+                    imgPath:"Grass Progress 3.PNG",
+                    description: [
+                        "Added GPU-instanced grass blades.",
+                        "The number of instances is an even power of 2 so that the bit representation of the instance ID can be split in half to serve as both the x and z position of each individual blade.",
+                    ]
+                },
+                {
+                    imgPath:"Grass Progress 4.PNG",
+                    description: [
+                        "Added colour to grass blades linearly interpolated based on height between a bottom green colour and a top yellow colour.",
+                        "Implementation of a GPU RNG hash function to give each grass blade a random x-z offset to avoid uniformity."
+                    ]
+                },
+                {
+                    imgPath:"Grass Progress 5.PNG",
+                    description: [
+                        "More dense grass field.",
+                        "Plane colour made to match bottom of grass colour",
+                        "Random height scaling",
+                    ]
+                },
+            ],
+        },
+
+        //Portal Renderer
+        {
+            title:"Portal Renderer",
+            topLevelImgPath: "Portal Renderer.jpg",
+            topLevelDescription: [
+                "",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"",
+                    description: [
+                        "",
+                    ]
+                },
+            ],
+        },
+
+        //Unity Voxel Engine
+        {
+            title:"Unity Voxel Engine",
+            topLevelImgPath: "TotallyNotMinecraft.jpg",
+            topLevelDescription: [
+                "",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"",
+                    description: [
+                        "",
+                    ]
+                },
+            ],
+        },
+
+        //Post-Processing
+        {
+            title:"Post-Processing",
+            topLevelImgPath: "Post Processing.jpg",
+            topLevelDescription: [
+                "",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"",
+                    description: [
+                        "",
+                    ]
+                },
+            ],
+        },
+
+        //Depth of Field
+        {
+            title:"Depth of Field",
+            topLevelImgPath: "Depth of Field.jpg",
+            topLevelDescription: [
+                "",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"",
+                    description: [
+                        "",
+                    ]
+                },
+            ],
+        },
+
     ]
 
     return (
