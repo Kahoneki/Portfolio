@@ -14,6 +14,7 @@ export default {
         sidebar: '#FFAFBC',
         text: '#59002A',
         linkHover: '#FFD6DD',
+        thumbnailHoverDescription: '#FDEEF5',
         contentSeparator: '#FF5D77'
       },
     },

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./Home"
 import About from "./About"
 import Portfolio from "./Portfolio"
+import PortfolioItemPage from "./PortfolioItemPage"
 import Contact from "./Contact"
 
 function App() {
@@ -10,7 +11,7 @@ return (
 
   <BrowserRouter>
   {/* Main page */}
-  <div className="bg-background text-text h-screen">
+  <div className="bg-background text-text h-full">
     {/* Page content */}
     <div>
       {/* BrowserRouter element will be replaced with Route element for appropriate path lookup
@@ -19,6 +20,7 @@ return (
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:index" element={<PortfolioItemPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       
