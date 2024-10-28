@@ -5,10 +5,10 @@ function PortfolioItem({index, path, title, description}: {index: number, path:s
 {
     return (
         <Link to={"/portfolio/" + index}
-        className="group flex-1 h-full rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-6">
+        className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-6">
             
             {/* Image + overlay + description container */}
-            <div className="h-5/6 w-full relative">
+            <div className="h-5/6 relative">
 
                 {/* Image */}
                 <img className="w-full h-full aspect-[16/9] object-cover rounded-xl" src={"/Images/Thumbnails/" + path}></img>
@@ -90,14 +90,12 @@ function Portfolio()
 return (
     <>
     <Navbar></Navbar>
-    <div className="flex flex-col flex-1">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 flex-1 w-full h-full p-8">
-        {
-            thumbnails.map((t, index) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 p-8">
+    {
+        thumbnails.map((t, index) => (
             <PortfolioItem key={index} index={index} path={t.path} title={t.title} description={t.description}></PortfolioItem>
-            ))
-        }
-        </div>
+        ))
+    }
     </div>
     </>
 )
