@@ -1,10 +1,10 @@
 import Navbar from "./Navbar"
 import { Link } from "react-router-dom";
 
-function PortfolioItem({index, path, title, description}: {index: number, path:string, title:string, description:string})
+function PortfolioItem({path, projectName, description}: {path:string, projectName:string, description:string})
 {
     return (
-        <Link to={"/portfolio/" + index}
+        <Link to={"/portfolio/" + projectName}
         className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-6">
             
             {/* Image + overlay + description container */}
@@ -21,7 +21,7 @@ function PortfolioItem({index, path, title, description}: {index: number, path:s
 
             </div>
 
-            <p className="text-center font-bold text-xl translate-y-4 transition-all duration-300">{title}</p>
+            <p className="text-center font-bold text-xl translate-y-4 transition-all duration-300">{projectName}</p>
         </Link>
     )
 }
@@ -92,8 +92,8 @@ return (
     <Navbar></Navbar>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 p-8">
     {
-        thumbnails.map((t, index) => (
-            <PortfolioItem key={index} index={index} path={t.path} title={t.title} description={t.description}></PortfolioItem>
+        thumbnails.map(t => (
+            <PortfolioItem key={t.title} path={t.path} projectName={t.title} description={t.description}></PortfolioItem>
         ))
     }
     </div>

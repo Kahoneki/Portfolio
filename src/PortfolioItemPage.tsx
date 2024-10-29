@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom"
 
 function PortfolioItemPage()
 {
-    const { index } = useParams<{ index: string }>()
-    const i = parseInt(index ?? "0", 10)
+    const { projectName } = useParams<{ projectName: string }>()
 
     const itemPageInfo = [
         // Dynamic Tesselation
@@ -188,16 +187,13 @@ function PortfolioItemPage()
             title:"Portal Renderer",
             topLevelImgPath: "Portal Renderer.jpg",
             topLevelDescription: [
-                "",
+                "The stencil buffer is a screenspace texture that can be attached to a framebuffer. Unlike the colour and depth buffer, it holds arbitrary data that can be used for any purpose.",
+                "In this program, I render the scene as usual, then render portal A while writing a 1 into the stencil buffer for every rendered pixel; this effectively creates a portal-shaped silhouette of 1s in the buffer - this silhouette is otherwise known as a mask.",
+                "Then, the scene is rendered again but from the perspective of portal B, and only where there is a 1 in the stencil buffer. Only part of the scene will therefore be rendered: the part inside the portal mask.",
+                "Note that care must be taken to ensure that the position of the camera during the second pass lines up with what the player expects to see through the portal. This is achieved by effectively mapping the player's transform relative to portal A and applying it to the transform of portal B. This gives us the location and rotation of the view matrix from which the scene should be rendered for the second pass.",
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
-                {
-                    imgPath:"",
-                    description: [
-                        "",
-                    ]
-                },
             ],
         },
 
@@ -206,16 +202,20 @@ function PortfolioItemPage()
             title:"Unity Voxel Engine",
             topLevelImgPath: "TotallyNotMinecraft.jpg",
             topLevelDescription: [
-                "",
+                `Based on Minecraft, this Unity Project features:
+- Procedurally generated multi-octave voxel terrain.
+- Infinite terrain implemented in chunks over multiple threads.
+- Voxel-based occlusion culling algorithm.
+- Tree generation algorithm.
+- Raycasting and face highlighting.
+- UV mapping with texture atlas.
+- Opaque and transparent block types.
+- Block placing and breaking.
+- F3 debug menu.
+- Character controller with ground + flight controls.`,
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
-                {
-                    imgPath:"",
-                    description: [
-                        "",
-                    ]
-                },
             ],
         },
 
@@ -224,16 +224,13 @@ function PortfolioItemPage()
             title:"Post-Processing",
             topLevelImgPath: "Post Processing.jpg",
             topLevelDescription: [
-                "",
+                "Deferred rendering is the practice of rendering your scene to a separate framebuffer (i.e.: not the one that gets displayed to the user), then using the colour buffer from the offscreen framebuffer as a normal texture, it can be drawn to the default framebuffer as a quad on the screen.",
+                "Doing this allows you to add a post-processing pass on your scene, effects such as saturation, fog, and vignetting are applied at this stage and are implemented in the picture on the left.",
+                "This project also features MSAA which is an anti-aliasing technique that splits pixels into a number of smaller subpixel sample points that, when intersected by a polygon, will run a single fragment shader invocation that affects all intersected points and save the colour into the intersecting subpixels. Once the whole scene has been rendered, the colour data stored in each sample point is blended together, creating an anti-aliased effect where polygons that intersect with more of the sample points (taking up more of the pixel) will have a greater effect on the final colour.",
+                "On top of this, this project also taught me about the many ways of controlling MSAA such as setting sample-alpha-coverage, mask-inversion, sample-rate-shading, multi-sampled textures and framebuffers, etc.",
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
-                {
-                    imgPath:"",
-                    description: [
-                        "",
-                    ]
-                },
             ],
         },
 
@@ -242,40 +239,54 @@ function PortfolioItemPage()
             title:"Depth of Field",
             topLevelImgPath: "Depth of Field.jpg",
             topLevelDescription: [
-                "",
+                "A prefix sum is an algorithm which takes as input an array of numbers and returns a new array of numbers where each element is the sum of all the elements up to that point in the original list. Given the algorithm's sequential tallying nature, at first glance, it would seem to not lend itself very well to being parallelised. However, this is in fact an extremely parallelisable algorithm with a parallel time complexity of O(log(n)). This algorithm has been used here to generate a convincing depth of field effect.",
+                "By deferring the rendering of each frame, we can grab the colour data and run a 2D parallel prefix sum on it. This is done by running two passes of the parallel prefix sum and at the end of each iteration, transposing the image. This means that at the end of the first pass, it's in the correct orientation for the second pass, and after the second pass it has been transposed twice and hence is back to its original orientation.",
+                "By running the 2D parallel prefix sum, we have now created what is known as a Summed Area Table (SAT). With a given SAT, it is possible to extract a sub-SAT for any rectangle within the table that represents the SAT of that rectangle! In other words, this sub-SAT contains the same data as if we had run the 2D parallel prefix sum specifically on that smaller region. This allows us to compute the 2D prefix sum of any sub rectangle within the image.",
+                "At this point, it's possible to blur the frame by choosing a \"kernel size\" (aka the radius of the rectangle). Then, for each pixel, we can create a sub-SAT to get the sum of all pixels in a rectangle centered around it, and since we have the area of the rectangle (double the kernel size squared), we can divide by the area and get the average colour. By doing this for every pixel in the image, we get a blurred image where the blur strength is proportional to the kernel size.",
+                "Since we have access to the depth information in the scene, we can use it to create a variable kernel size that differs between pixels. The kernel size can be expressed as a function of a pixel's depth, and a provided constant focal distance and focal depth. Such a function should take pixels whose depth values are at the focal depth and return a kernel size of 0.5 (meaning a box diameter of 1 and hence no blurring for that pixel) and linearly increase the kernel size the further a pixel is from the focal distance at a rate inversely proportional to the focal depth.",
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
-                {
-                    imgPath:"",
-                    description: [
-                        "",
-                    ]
-                },
             ],
         },
 
     ]
 
+    let portfolioItem = itemPageInfo.find(info => info.title == projectName)
+
+    if (portfolioItem == undefined) {
+        console.log(("Page not found"));
+        
+        return (
+            <>
+            <div className="flex flex-col">
+                <Navbar></Navbar>
+                <img src="/Images/favicon.png" className="mt-16 mx-auto flex-1 h-1/6 w-1/6"></img>
+                <p className="font-bold mx-auto mt-8 text-4xl text-center">Error 404: Page not found!</p>
+            </div>
+            </>
+        )
+    }
+
     return (
         <>
-        <div className="flex-col">
+        <div className="flex flex-col">
             <Navbar></Navbar>
 
             {/* Single entry (image + description) */}
             <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 mb-8">
                 
                 {/* Image */}
-                <div className="bg-contentSeparator h-full p-6 m-4 rounded-3xl">
-                    <img src={"/Images/Thumbnails/" + itemPageInfo[i].topLevelImgPath} className="w-full h-full rounded-xl"></img>
+                <div className="bg-contentSeparator h-full max-h-[600px] p-6 m-4 rounded-3xl ">
+                    <img src={"/Images/Thumbnails/" + portfolioItem.topLevelImgPath} className="w-full h-full rounded-xl object-cover"></img>
                 </div>
 
                 {/* Description */}
-                <div className="flex flex-col h-full m-4 p-4 gap-y-4 bg-contentSeparator rounded-3xl">
-                    <h1 className="h-1/5 pl-4 py-8 bg-linkHover rounded-3xl text-4xl font-bold">{itemPageInfo[i].title}</h1>
+                <div className="flex flex-col h-full m-4 p-4 gap-y-4 justify-center bg-contentSeparator rounded-3xl">
+                    <h1 className="pl-4 py-8 bg-linkHover rounded-3xl text-4xl font-bold">{portfolioItem.title}</h1>
                     {
-                        itemPageInfo[i].topLevelDescription.map(d => (
-                            <p className="flex-1 p-4 bg-linkHover rounded-3xl">{d}</p>
+                        portfolioItem.topLevelDescription.map(d => (
+                            <p className="flex-1 p-4 bg-linkHover rounded-3xl whitespace-pre-wrap">{d}</p>
                         ))
                     }
                 </div>
@@ -285,13 +296,13 @@ function PortfolioItemPage()
             {/* Group of all described image entries */}
             <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
-                itemPageInfo[i].describedImages.map(di => (
+                portfolioItem.describedImages.map(di => (
                     <div className="flex flex-row items-center">
                         <div className="flex flex-col">
 
                             {/* Image */}
                             <div className="bg-contentSeparator p-6 m-4 rounded-3xl">
-                                <img src={"/Images/PortfolioItemImages/" + itemPageInfo[i].title + "/" + di.imgPath} className="w-full h-full rounded-xl"></img>
+                                <img src={"/Images/PortfolioItemImages/" + portfolioItem.title + "/" + di.imgPath} className="w-full h-full rounded-xl"></img>
                             </div>
 
                             {/* Description */}

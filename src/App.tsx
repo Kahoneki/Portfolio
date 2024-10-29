@@ -37,7 +37,7 @@ return (
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/portfolio/:index" element={<PortfolioItemPage />} />
+        <Route path="/portfolio/:projectName" element={<PortfolioItemPage />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
