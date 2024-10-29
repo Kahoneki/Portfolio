@@ -277,7 +277,7 @@ function PortfolioItemPage()
             <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 mb-8">
                 
                 {/* Image */}
-                <div className="bg-contentSeparator h-full max-h-[600px] p-6 m-4 rounded-3xl ">
+                <div className="bg-contentSeparator h-full max-h-[600px] p-6 m-4 rounded-3xl sticky top-20">
                     <img src={"/Images/Thumbnails/" + portfolioItem.topLevelImgPath} className="w-full h-full rounded-xl object-cover"></img>
                 </div>
 

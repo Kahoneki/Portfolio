@@ -87,7 +87,7 @@ return (
             {
                 carousel.map(c => (
                     <SwiperSlide>
-                        <img className="object-cover h-5/6 w-full" src={"/Images/Thumbnails/" + c.path}></img>
+                        <img className="object-cover h-5/6 w-full rounded-xl" src={"/Images/Thumbnails/" + c.path}></img>
                         <p className="mt-4 text-center text-text font-bold">{c.title}</p>
                         <p className="text-center text-text">{c.description}</p>
                     </SwiperSlide>
