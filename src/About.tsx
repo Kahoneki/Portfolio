@@ -234,7 +234,7 @@ return (
                 <div className="pt-4">
                     <h3 className="text-2xl font-bold">Internal Events Manager</h3>
                     <p className="text-lg italic">May 2024 - Present</p>
-                    <p>Elected by my peers to lead this position, it is my proud responsibility to take feedback from our membersand turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritise representation and transparency, ensuring all members feel heard and involved. This role also involves maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
+                    <p>Elected by my peers to lead this position, it is my proud responsibility to take feedback from our members and turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritise representation and transparency, ensuring all members feel heard and involved. This role also involves maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
                     <p>Notable events I've organised:</p>
                     <ul className="list-disc pl-6">
                         <li>AGDS Freshers Jam 2024</li>
