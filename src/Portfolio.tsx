@@ -5,7 +5,7 @@ function PortfolioItem({path, projectName, description}: {path:string, projectNa
 {
     return (
         <Link to={"/portfolio/" + projectName}
-        className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-6">
+        className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-4 lg:p-6">
             
             {/* Image + overlay + description container */}
             <div className="h-5/6 relative">
@@ -21,7 +21,7 @@ function PortfolioItem({path, projectName, description}: {path:string, projectNa
 
             </div>
 
-            <p className="text-center font-bold text-xl translate-y-4 transition-all duration-300">{projectName}</p>
+            <p className="text-center font-bold text-base lg:text-xl translate-y-4 transition-all duration-300">{projectName}</p>
         </Link>
     )
 }
