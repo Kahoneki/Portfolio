@@ -45,12 +45,15 @@ function OnWindowResize() {
 }
 
 
+let basename="/Portfolio"
+
+
 function App() {
   
 return (
   <>
 
-  <BrowserRouter basename="/Portfolio">
+  <BrowserRouter basename={basename}>
   {/* Main page */}
   <div className="bg-background text-text h-full min-h-screen">
     {/* Page content */}
@@ -62,11 +65,11 @@ return (
       {/* BrowserRouter element will be replaced with Route element for appropriate path lookup
       (e.g.: if url path="/", it will be replaced with Home element) */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/portfolio/:projectName" element={<PortfolioItemPage />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path={basename + "/"} element={<Home />} />
+        <Route path={basename + "/about"} element={<About />} />
+        <Route path={basename + "/portfolio"} element={<Portfolio />} />
+        <Route path={basename + "/portfolio/:projectName"} element={<PortfolioItemPage />} />
+        <Route path={basename + "/contact"} element={<Contact />} />
       </Routes>
     </div>
   </div>
