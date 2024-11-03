@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes, useLocation } from "react-router-dom"
+import { BrowserRouter, HashRouter, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
 
 import Home from "./Home"
@@ -50,7 +50,7 @@ function App() {
 return (
   <>
 
-  <HashRouter>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
   {/* Main page */}
   <div className="bg-background text-text h-full min-h-screen">
     {/* Page content */}
@@ -70,7 +70,7 @@ return (
       </Routes>
     </div>
   </div>
-  </HashRouter>
+  </BrowserRouter>
 
   </>
 )
