@@ -17,7 +17,7 @@ return (
     <>
     <div className="flex flex-row justify-between h-16 w-full items-center bg-sidebar sticky top-0 z-10">
 
-        {location.pathname == import.meta.env.BASE_URL + "/" ? <></> : <NavbarItem href="/" pathname={location.pathname}>Home</NavbarItem>}
+        {location.pathname == "/" ? <></> : <NavbarItem href="/" pathname={location.pathname}>Home</NavbarItem>}
         <NavbarItem href={import.meta.env.BASE_URL + "/about"} pathname={location.pathname}>About</NavbarItem>
         <NavbarItem href={import.meta.env.BASE_URL + "/portfolio"} pathname={location.pathname}>Portfolio</NavbarItem>
         <NavbarItem href={import.meta.env.BASE_URL + "/contact"} pathname={location.pathname}>Contact</NavbarItem>
