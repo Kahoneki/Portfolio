@@ -90,6 +90,7 @@ function Portfolio()
 return (
     <>
     <Navbar></Navbar>
+    <h1 className="text-5xl font-bold pt-6 text-center">Click to learn more!</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 p-8">
     {
         thumbnails.map(t => (
