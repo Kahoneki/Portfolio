@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
 
 import Home from "./Home"
@@ -50,7 +50,7 @@ function App() {
 return (
   <>
 
-  <BrowserRouter basename={import.meta.env.BASE_URL}>
+  <HashRouter basename={import.meta.env.BASE_URL}>
   {/* Main page */}
   <div className="bg-background text-text h-full min-h-screen">
     {/* Page content */}
@@ -59,7 +59,7 @@ return (
       <ScrollToTopOnSiteChange></ScrollToTopOnSiteChange>
       <OnWindowResize></OnWindowResize>
 
-      {/* BrowserRouter element will be replaced with Route element for appropriate path lookup
+      {/* HashRouter element will be replaced with Route element for appropriate path lookup
       (e.g.: if url path="/", it will be replaced with Home element) */}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -70,7 +70,7 @@ return (
       </Routes>
     </div>
   </div>
-  </BrowserRouter>
+  </HashRouter>
 
   </>
 )
