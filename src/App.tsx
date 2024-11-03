@@ -50,7 +50,7 @@ function App() {
 return (
   <>
 
-  <BrowserRouter>
+  <BrowserRouter basename="/Portfolio">
   {/* Main page */}
   <div className="bg-background text-text h-full min-h-screen">
     {/* Page content */}
