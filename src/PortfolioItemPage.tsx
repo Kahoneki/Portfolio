@@ -109,7 +109,7 @@ function PortfolioItemPage()
             topLevelImgPath: "Limb 4 Limb.png",
             topLevelDescription: [
                 "For my 1st year C++ Games Programming coursework project, I made an online real-time fighting game in SFML.",
-                "It uses a client-server model with a combined TCP/UDP protocol and a (somewhat) sophisticated structure to maintain synchronisation between clients. The server runs on an oracle linux web instance.",
+                "It uses a client-server model with a combined TCP/UDP protocol and a sophisticated structure to maintain synchronisation between clients. The server runs on an oracle linux web instance.",
                 "In addition, this project makes use of databases to allow users to create accounts and have their online ranking saved to the server, as well as send match invitations to their friends. The database is handled using the SQLite library.",
                 "It also features 5 levels of AI difficulty to choose between for a singleplayer mode and a local mode for both players to play on the same computer.",
                 "This project achieved an A+ and was put on the \"Hall of Fame\" to serve as an exemplary project for students the following year.",
