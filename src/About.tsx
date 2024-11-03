@@ -54,7 +54,7 @@ return (
 
                     <br></br>
 
-                    <p>See more projects at <a className="font-bold hover:underline" href="/portfolio">Portfolio</a></p>
+                    <p>See more projects at <a className="font-bold hover:underline" href={import.meta.env.BASE_URL + "portfolio"}>Portfolio</a></p>
                 </div>
             </div>
             {/* End of project highlights */}
