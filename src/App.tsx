@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter, Route, Routes, useLocation } from "react-router-dom"
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
 
 import Home from "./Home"
