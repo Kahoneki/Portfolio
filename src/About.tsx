@@ -1,4 +1,5 @@
 import Navbar from "./Navbar"
+import { Link } from "react-router-dom"
 
 function About()
 {
@@ -54,7 +55,7 @@ return (
 
                     <br></br>
 
-                    <p>See more projects at <a className="font-bold hover:underline" href={import.meta.env.BASE_URL + "portfolio"}>Portfolio</a></p>
+                    <p>See more projects at <Link className="font-bold hover:underline" to="/portfolio">Portfolio</Link></p>
                 </div>
             </div>
             {/* End of project highlights */}
