@@ -261,7 +261,7 @@ function PortfolioItemPage()
             <>
             <div className="flex flex-col">
                 <Navbar></Navbar>
-                <img src="/Images/favicon.png" className="mt-16 mx-auto flex-1 h-1/6 w-1/6"></img>
+                <img src="Images/favicon.png" className="mt-16 mx-auto flex-1 h-1/6 w-1/6"></img>
                 <p className="font-bold mx-auto mt-8 text-4xl text-center">Error 404: Page not found!</p>
             </div>
             </>
@@ -278,7 +278,7 @@ function PortfolioItemPage()
                 
                 {/* Image */}
                 <div className="bg-contentSeparator h-full max-h-[600px] p-6 m-4 rounded-3xl sticky top-20">
-                    <img src={"/Images/Thumbnails/" + portfolioItem.topLevelImgPath} className="w-full h-full rounded-xl object-cover"></img>
+                    <img src={"Images/Thumbnails/" + portfolioItem.topLevelImgPath} className="w-full h-full rounded-xl object-cover"></img>
                 </div>
 
                 {/* Description */}
@@ -302,7 +302,7 @@ function PortfolioItemPage()
 
                             {/* Image */}
                             <div className="bg-contentSeparator p-6 m-4 rounded-3xl">
-                                <img src={"/Images/PortfolioItemImages/" + portfolioItem.title + "/" + di.imgPath} className="w-full h-full rounded-xl"></img>
+                                <img src={"Images/PortfolioItemImages/" + portfolioItem.title + "/" + di.imgPath} className="w-full h-full rounded-xl"></img>
                             </div>
 
                             {/* Description */}

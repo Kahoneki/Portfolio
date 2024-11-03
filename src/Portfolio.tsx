@@ -11,7 +11,7 @@ function PortfolioItem({path, projectName, description}: {path:string, projectNa
             <div className="h-5/6 relative">
 
                 {/* Image */}
-                <img className="w-full h-full aspect-[16/9] object-cover rounded-xl" src={"/Images/Thumbnails/" + path}></img>
+                <img className="w-full h-full aspect-[16/9] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
