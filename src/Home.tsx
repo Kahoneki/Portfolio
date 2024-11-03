@@ -110,7 +110,7 @@ return (
         {/* Sidebar */}
         <div className="h-screen w-1/4 bg-sidebar px-6 flex flex-col justify-center">
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pt-4 space-y-8 list-image-[url(Images/strawberry.svg)]">
+        <ul className={`mt-8 font-medium pt-4 space-y-8 list-image-[url(${import.meta.env.BASE_URL}/Images/strawberry.svg)]`}>
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
             <li>2nd year student studying BSc (Hons) Computer Games Technology</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
@@ -141,7 +141,7 @@ return (
             {
                 carousel.map(c => (
                     <SwiperSlide>
-                        <img className="object-cover h-5/6 w-full rounded-xl" src={"/Images/Thumbnails/" + c.path}></img>
+                        <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
                         <p className="mt-4 text-center text-text font-bold">{c.title}</p>
                         <p className="text-center text-text">{c.description}</p>
                     </SwiperSlide>
