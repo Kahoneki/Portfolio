@@ -49,6 +49,60 @@ function Home()
 
       ];
 
+
+// Check for aspect ratio - if vertical display, render differently
+// console.log(screen.availWidth / screen.availHeight)
+if (screen.availWidth / screen.availHeight < 1.25 || screen.availWidth < 600 || screen.availHeight < 600) {
+// Vertical
+return (
+    <>  
+    <div className="flex flex-col">
+        {/* Top */}
+        <Navbar></Navbar>
+        <div className="py-16 bg-sidebar px-6 flex flex-col justify-center">
+        <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
+        <ul className="mt-8 font-medium pt-4 space-y-8 list-image-[url(Images/strawberry.svg)]">
+            <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
+            <li>2nd year student studying BSc (Hons) Computer Games Technology</li>
+            <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
+            <li>Internal Events Manager @ Abertay Game Development Society</li>
+        </ul>
+        </div>
+
+        {/* Swiper */}
+        <div className="text-black pt-8 px-8 mb-4 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px]">
+        <Swiper className="h-full"
+        modules={[Autoplay, Pagination]}
+        autoplay={{
+            delay: 6000, // Set delay in ms
+            disableOnInteraction: false, // Continues autoplay after user interaction
+            }}
+        pagination
+        spaceBetween={50}
+        slidesPerView={1}
+        centeredSlides={true}
+        loop={true}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
+        >
+        
+        {
+            carousel.map(c => (
+                <SwiperSlide>
+                    <img className="object-cover h-5/6 w-full rounded-xl" src={"/Images/Thumbnails/" + c.path}></img>
+                    <p className="mt-4 text-center text-text font-bold">{c.title}</p>
+                    <p className="text-center text-text mb-6">{c.description}</p>
+                </SwiperSlide>
+            ))
+        }
+        </Swiper>
+        </div>
+    </div>
+    </>
+)
+}
+else {
+//Horizontal
 return (
     <>
     <div className="flex flex-row">
@@ -56,7 +110,7 @@ return (
         {/* Sidebar */}
         <div className="h-screen w-1/4 bg-sidebar px-6 flex flex-col justify-center">
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pt-4 text-center space-y-8 list-image-[url(Images/strawberry.svg)]">
+        <ul className="mt-8 font-medium pt-4 space-y-8 list-image-[url(Images/strawberry.svg)]">
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
             <li>2nd year student studying BSc (Hons) Computer Games Technology</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
@@ -73,7 +127,7 @@ return (
             autoplay={{
                 delay: 6000, // Set delay in ms
                 disableOnInteraction: false, // Continues autoplay after user interaction
-              }}
+                }}
             navigation
             pagination
             spaceBetween={50}
@@ -99,6 +153,8 @@ return (
     </div>
     </>
 )
+}
+
 }
 
 export default Home

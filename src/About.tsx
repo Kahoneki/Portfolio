@@ -14,15 +14,16 @@ return (
 
             {/* Intro strip */}
             <div>
-                <div className="flex flex-row h-full">
-                    <img src="Images/me full edited.PNG" className="rounded-full mx-4 mt-8 my-auto border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar"></img>
-                    <div className="mt-48 ml-2">
-                        <h1 className="text-8xl font-bold inline">Hey, I'm Ava!</h1>
-                        <img src="Images/favicon.png" className="w-32 inline relative -top-10 -right-4"></img>
-                        <p className="text-3xl ml-2 relative -top-4">A Graphics Programmer from Dundee.</p>
-                        <p className="text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the immense power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
+                <div className="flex flex-row">
+                    <img src="Images/me full edited.PNG" className="rounded-full mr-2 lg:mx-4 w-1/3 lg:w-1/2 mt-8 my-auto border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar"></img>
+                    <div className="mt-16 lg:mt-48 ml-2">
+                        <h1 className="text-2xl lg:text-8xl font-bold inline">Hey, I'm Ava!</h1>
+                        <img src="Images/favicon.png" className="w-6 lg:w-32 inline relative -top-2 -right-2 lg:-top-10 lg:-right-4"></img>
+                        <p className="text-lg lg:text-3xl mt-3 lg:mt-0 lg:ml-2 relative -top-4">A Graphics Programmer from Dundee.</p>
+                        <p className="hidden lg:block text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the immense power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
                     </div>
                 </div>
+                <p className="block lg:hidden mt-8 lg:mt-0 text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the immense power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
             </div>
             {/* End of intro strip */}
 
