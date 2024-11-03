@@ -1,10 +1,10 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 
 function NavbarItem({href, children, pathname}: {href: string, children: React.ReactNode, pathname: string})
 {
     return (
-        <a className={"h-full flex-1 flex items-center justify-center text-xl hover:font-bold hover:bg-linkHover hover:text-2xl transition-all duration-300 " + ((pathname == href) ? "font-bold" : "")} href={href}>{children}</a>
+        <Link className={"h-full flex-1 flex items-center justify-center text-xl hover:font-bold hover:bg-linkHover hover:text-2xl transition-all duration-300 " + ((pathname == href) ? "font-bold" : "")} to={href}>{children}</Link>
     )
 }
 
