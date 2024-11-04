@@ -203,7 +203,7 @@ return (
                         <li>Underwent a 4-week-long internship focused on automating the manual process of graph cropping through the development of Computer Vision applications in Python, utilising libraries such as NumPy, OpenCV,and Pillow.</li>
                         <li>Successfully transitioned the graph cropping process from manual to automated, significantly improving efficiency and accuracy.</li>
                         <li>Gathered requirements by directly consulting with the engineering department to ensure the software met their needs and aligned with the functionality of a larger software package.</li>
-                        <li>This experience enhanced mytechnical and problem solving skills while also boosting my confidence and teamworkabilities in a professional environment.</li>
+                        <li>This experience enhanced my technical and problem solving skills while also boosting my confidence and teamworkabilities in a professional environment.</li>
                     </ul>
                 </div>
                 {/* End of TechnipFMC */}
