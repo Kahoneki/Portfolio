@@ -91,6 +91,7 @@ return (
                 <div className="pt-6">
                     <h3 className="text-2xl font-bold">Miscellaneous</h3>
                     <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
+                        <li>Git/GitHub</li>
                         <li>Network Programming</li>
                         <li>SQLite</li>
                         <li>Oracle Web Computing</li>
