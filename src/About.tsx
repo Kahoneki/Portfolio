@@ -73,6 +73,7 @@ return (
                     <h3 className="text-2xl font-bold">Graphics</h3>
                     <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
                         <li>OpenGL</li>
+                        <li>Nvidia Nsight</li>
                         <li>RenderDoc</li>
                         <li>GPGPU</li>
                         <li>Procedural Generation</li>
