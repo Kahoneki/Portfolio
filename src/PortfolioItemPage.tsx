@@ -6,28 +6,13 @@ function PortfolioItemPage()
     const { projectName } = useParams<{ projectName: string }>()
 
     const itemPageInfo = [
-        // Online Multiplayer PS5 Game
-        {
-            title:"Online Multiplayer PS5 Game",
-            topLevelImgPath: "Online Multiplayer PS5 Game.jpg",
-            topLevelDescription: [
-                "For our 2nd year module \"CMP208: Games Programming and Systems Architecture\", we are using the PlayStation 5 Development Kits to create a game in a group. The in-house framework we're using is still under development and doesn't have support for many of the things our team are wanting to include, so this has involved interfacing directly with the PS5 hardware.",
-                "The following are a list of features (both implemented and planned):\n- Cross-Platform Development for x64 and Prospero (PS5 SDK)\n- Modular input framework supporting complex cross-platform input mappings to queryable actions\n- Custom PS5 trigger and haptic effects\n- Complex and realistic 3D Physics with collisions (Jolt)\n- Online multiplayer in a P2P LAN environment featuring rollback netcode architecture\n- Custom Rendering with HLSL and PSSL shaders (graphics and compute)\n- File reading/writing for long-term progression\n- Music and audio system\n- Procedural map generation\n- Procedural planets/asteroids (using compute shaders)",
-                "The in-house framework we have to use for this module is still in development, textured 3D models have not yet implemented into the engine which is why the game currently looks like that. We've enquired and been informed that textures will be implemented soon.",
-                "Please note that due to Sony's NDA, the code for this project is private and details I can share are limited. As a team, we are looking into ways of abstracting the PS5 code into a separate project so that the bulk of the code (and low-level x64) can be made public."
-            ],
-            //imgPath automatically prefixed with title attribute from above as folder name
-            describedImages: [
-            ],
-        },
-
         // OpenGL Render Engine
         {
             title:"OpenGL Render Engine (Neki)",
             topLevelImgPath: "OpenGL Render Engine.jpg",
             topLevelDescription: [
                 "Neki is an in-the-works render engine built in OpenGL with GLFW/GLAD and GLM.\nThis engine will encompass all of my current and future OpenGL projects. As more features are implemented, this page will be updated.",
-                "Currently contains:\n- 3D Rendering\n- First Person Camera\n- Blinn-Phong Specular Lighting Model (+ Rim Lighting and Custom Materials)\n- Bindless Textures\n- Normal Maps\n- Stencil-Buffer Portal Rendering\n- Postprocessing Pipeline\n\nTo do:\n- Dynamic Tessellation\n- GPU Instancing (and grass rendering)\n- More Material Types\n- Water Rendering (with sum of sines / potentially FFT)\n- Boids\n- More Post Processing Effects (e.g. Depth of Field, Fisheye)\n- Anti-Aliasing (support for multiple types)\n\nTo do (Advanced):\n- Particle Simulations\n- Volumetric Effects (e.g.: Fog, Clouds, Atmosphere)"
+                "Currently contains:\n- 3D Rendering\n- First Person Camera\n- Blinn-Phong Specular Lighting Model (+ Rim Lighting and Custom Materials)\n- Bindless Textures\n- Normal Maps\n- Stencil-Buffer Portal Rendering\n- Postprocessing Pipeline\n\nTo do:\n- External 3D Model Loading\n- Dynamic Tessellation\n- GPU Instancing (and grass rendering)\n- More Material Types\n- Water Rendering (with sum of sines / potentially FFT)\n- Boids\n- More Post Processing Effects (e.g. Depth of Field, Fisheye)\n- Anti-Aliasing (support for multiple types)\n\nTo do (Advanced):\n- Particle Simulations\n- Volumetric Effects (e.g.: Fog, Clouds, Atmosphere)"
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
@@ -92,6 +77,21 @@ function PortfolioItemPage()
                         "The current system treats all the effects as one large multi-pass effect, and hence has built-in support for more complex multi-pass effects such as depth of field. It also has support for providing required user-specified data to the shader via a buffer through a class the user can interface through (e.g.: the Saturation class gives the ability to set the strength of the saturation).",
                     ]
                 },
+            ],
+        },
+
+        // Online Multiplayer PS5 Game
+        {
+            title:"Online Multiplayer PS5 Game",
+            topLevelImgPath: "Online Multiplayer PS5 Game.jpg",
+            topLevelDescription: [
+                "For our 2nd year module \"CMP208: Games Programming and Systems Architecture\", we are using the PlayStation 5 Development Kits to create a game in a group. The in-house framework we're using is still under development and doesn't have support for many of the things our team are wanting to include, so this has involved interfacing directly with the PS5 hardware.",
+                "The following are a list of features (both implemented and planned):\n- Cross-Platform Development for x64 and Prospero (PS5 SDK)\n- Modular input framework supporting complex cross-platform input mappings to queryable actions\n- Custom PS5 trigger and haptic effects\n- Complex and realistic 3D Physics with collisions (Jolt)\n- Online multiplayer in a P2P LAN environment featuring rollback netcode architecture\n- Custom Rendering with HLSL and PSSL shaders (graphics and compute)\n- File reading/writing for long-term progression\n- Music and audio system\n- Procedural map generation\n- Procedural planets/asteroids (using compute shaders)",
+                "The in-house framework we have to use for this module is still in development, textured 3D models have not yet implemented into the engine which is why the game currently looks like that. We've enquired and been informed that textures will be implemented soon.",
+                "Please note that due to Sony's NDA, the code for this project is private and details I can share are limited. As a team, we are looking into ways of abstracting the PS5 code into a separate project so that the bulk of the code (and low-level x64) can be made public."
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
             ],
         },
 
