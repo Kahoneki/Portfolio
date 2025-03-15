@@ -6,6 +6,95 @@ function PortfolioItemPage()
     const { projectName } = useParams<{ projectName: string }>()
 
     const itemPageInfo = [
+        // Online Multiplayer PS5 Game
+        {
+            title:"Online Multiplayer PS5 Game",
+            topLevelImgPath: "Online Multiplayer PS5 Game.jpg",
+            topLevelDescription: [
+                "For our 2nd year module \"CMP208: Games Programming and Systems Architecture\", we are using the PlayStation 5 Development Kits to create a game in a group. The in-house framework we're using is still under development and doesn't have support for many of the things our team are wanting to include, so this has involved interfacing directly with the PS5 hardware.",
+                "The following are a list of features (both implemented and planned):\n- Cross-Platform Development for x64 and Prospero (PS5 SDK)\n- Modular input framework supporting complex cross-platform input mappings to queryable actions\n- Custom PS5 trigger and haptic effects\n- Complex and realistic 3D Physics with collisions (Jolt)\n- Online multiplayer in a P2P LAN environment featuring rollback netcode architecture\n- Custom Rendering with HLSL and PSSL shaders (graphics and compute)\n- File reading/writing for long-term progression\n- Music and audio system\n- Procedural map generation\n- Procedural planets/asteroids (using compute shaders)",
+                "The in-house framework we have to use for this module is still in development, textured 3D models have not yet implemented into the engine which is why the game currently looks like that. We've enquired and been informed that textures will be implemented soon.",
+                "Please note that due to Sony's NDA, the code for this project is private and details I can share are limited. As a team, we are looking into ways of abstracting the PS5 code into a separate project so that the bulk of the code (and low-level x64) can be made public."
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+            ],
+        },
+
+        // OpenGL Render Engine
+        {
+            title:"OpenGL Render Engine (Neki)",
+            topLevelImgPath: "OpenGL Render Engine.jpg",
+            topLevelDescription: [
+                "Neki is an in-the-works render engine built in OpenGL with GLFW/GLAD and GLM.\nThis engine will encompass all of my current and future OpenGL projects. As more features are implemented, this page will be updated.",
+                "Currently contains:\n- 3D Rendering\n- First Person Camera\n- Blinn-Phong Specular Lighting Model (+ Rim Lighting and Custom Materials)\n- Bindless Textures\n- Normal Maps\n- Stencil-Buffer Portal Rendering\n- Postprocessing Pipeline\n\nTo do:\n- Dynamic Tessellation\n- GPU Instancing (and grass rendering)\n- More Material Types\n- Water Rendering (with sum of sines / potentially FFT)\n- Boids\n- More Post Processing Effects (e.g. Depth of Field, Fisheye)\n- Anti-Aliasing (support for multiple types)\n\nTo do (Advanced):\n- Particle Simulations\n- Volumetric Effects (e.g.: Fog, Clouds, Atmosphere)"
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+                {
+                    imgPath:"3DRendering_Camera_Material.jpg",
+                    description: [
+                        "3D Rendering, First-Person Camera, Custom Materials.",
+                        "In this image, the colour property on the cube's material has been enabled and set to green. The material information is sent to the static material shader preset via a buffer."
+                    ]
+                },
+                {
+                    imgPath:"BindlessTextures.jpg",
+                    description: [
+                        "Bindless textures",
+                        "These cubes have their albedo texture property enabled and have been provided a bindless texture handle by the asset manager class. The handle is passed to the material buffer using either a 64-bit uint (if supported) or two 32-bit uints.",
+                        "Bindless textures allow for more textures to be used in a single shader pass than would otherwise be permitted with texture units alone."
+                    ]
+                },
+                {
+                    imgPath:"BlinnPhongSpecular.jpg",
+                    description: [
+                        "Lights using the Blinn-Phong Specular lighting model",
+                        "Light data for all lights in a scene is passed to the active shader via a buffer which contains position; ambient, diffuse, and specular colours; and intensity",
+                        "Added the blinng phong standard shader preset"
+                    ]
+                },
+                {
+                    imgPath:"MultipleLights_Attenuation.jpg",
+                    description: [
+                        "Up to 800 simultaneous lights and attenuation based on distance from source",
+                        "Runs in realtime at 60+ FPS with per-frame randomised light updates"
+                    ]
+                },
+                {
+                    imgPath:"RimLighting.jpg",
+                    description: [
+                        "Rim lighting with customisable-intensity",
+                        "The cube is being lit from behind and the top face is being viewed from a grazing angle resulting in rim lighting."
+                    ]
+                },
+                {
+                    imgPath:"NormalTextures.jpg",
+                    description: [
+                        "Normal-texture maps",
+                        "This cube has its material's normal property set to active and a bindless texture has been set as the cube's normal texture.",
+                        "Normal maps require using the TBN matrix to convert the texture from tangent space into the object's local space for the specific fragment's transformation."
+                    ]
+                },
+                {
+                    imgPath:"Portals.jpg",
+                    description: [
+                        "Stencil-buffer portal rendering",
+                        "These two portals have been added to the scene and linked together. When the renderer draws objects in the scene, the stencil buffer is used to create masks of the portals' outlines. When the portals are drawn, the scene is re-rendered but only inside the mask for the respective portal. During this second pass, the view matrix is transformed to view the other portal from the same relative transformation as it is viewing the portal which is currently being drawn.",
+                        "This process is described more in-depth in the portfolio page \"Portal Renderer\". Advances on the old method include a more robust method for testing player-portal collisions, leading to more seamless movement through the portals.",
+                    ]
+                },
+                {
+                    imgPath:"Desaturated_Vignette.jpg",
+                    description: [
+                        "Post-processing pipeline",
+                        "The camera used in the above scene has been given saturation and vignette post-processing effects. The scene is being rendered to an offscreen framebuffer, after the renderer has finished with the first pass, it initiates the post-processing pass which goes through all the active effects and runs the corresponding compute shader.",
+                        "The current system treats all the effects as one large multi-pass effect, and hence has built-in support for more complex multi-pass effects such as depth of field. It also has support for providing required user-specified data to the shader via a buffer through a class the user can interface through (e.g.: the Saturation class gives the ability to set the strength of the saturation).",
+                    ]
+                },
+            ],
+        },
+
         // Dynamic Tesselation
         {
             title:"Dynamic Tesselation",

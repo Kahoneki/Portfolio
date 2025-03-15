@@ -137,7 +137,7 @@ return (
                 <div className="pt-4">
                     <h3 className="text-2xl font-bold">BSc (Hons) Computer Games Technology - Abertay University</h3>
                     <p className="text-lg italic">September 2023 - Present</p>
-                    <p className="text-lg font-bold">GPA: 4.33 / 4.5</p>
+                    <p className="text-lg font-bold">GPA: 4.42 / 4.5</p>
                     <ul className="list-none">
                         
                         <li>
@@ -147,9 +147,9 @@ return (
                                 <h5 className="font-semibold">Grades:</h5>
                                 <ul className="list-disc pl-6">
                                     <li>MAT101 (Applied Mathematics 1) - A+</li>
+                                    <li>CMP102 (Software Design) - A+</li>
                                     <li>CMP101 (Computer Hardware, Architecture, and Operating Systems) - A</li>
                                     <li>CMP104 (Programming With C++) - A</li>
-                                    <li>CMP102 (Software Design) - A+</li>
                                     <li>CMP105 (Games Programming with C++) - A</li>
                                 </ul>
                             </div>
@@ -162,6 +162,14 @@ return (
                             <div className="pl-2">
                                 <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty. </p>
                                 <p><span className="font-semibold">Internal Events Manager (Abertay Game Development Society): </span>Organised events to foster collaboration and knowledge between disciplines (more information further down).</p>
+                                <h5 className="font-semibold">Grades:</h5>
+                                <ul className="list-disc pl-6">
+                                    <li>CMP203 (Graphics Programming) - A+</li>
+                                    <li>CMP201 (Data, Structures, and Algorithms 1) - A+</li>
+                                    <li>MAT201 (Applied Mathematics 2) - A+</li>
+                                    <li>CMP202 (Data, Structures, and Algorithms 2) - [In Progress]</li>
+                                    <li>CMP208 (Games Programming and Systems Architecture) - [In Progress]</li>
+                                </ul>
                             </div>
                         </li>
                     </ul>
@@ -172,6 +180,7 @@ return (
                 <div className="pt-12">
                     <h3 className="text-2xl font-bold">High School - Westhill Academy</h3>
                     <p className="text-lg italic">August 2017 - June 2023</p>
+                    <p className="text-lg font-bold">GPA: 4.92 / 5.0</p>
                     <p><span className="font-semibold">Coding Club: </span>Founded the coding club in S6, sparking interest in computing and leading workshops for younger students.</p>
                     <p><span className="font-semibold">Maths Ambassador: </span>Served as a Maths Ambassador in S6, running events to encourage engagement in Mathematics</p>
                     <p><span className="font-semibold">Career Ready: </span>Took part in a program designed to give students real-world industry experience through mentorship, masterclasses, and a month long internship (more information further down).</p>
@@ -237,10 +246,12 @@ return (
                     <h3 className="text-2xl font-bold">Internal Events Manager</h3>
                     <p className="text-lg italic">May 2024 - Present</p>
                     <p>Elected by my peers to lead this position, it is my proud responsibility to take feedback from our members and turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritise representation and transparency, ensuring all members feel heard and involved. This role also involves maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
-                    <p>Notable events I've organised:</p>
+                    <p>Notable large events I've organised:</p>
                     <ul className="list-disc pl-6">
-                        <li>AGDS Freshers Jam 2024</li>
-                        <li>AGDS Halloween Jam 2024</li>
+                        <li>Freshers Game Jam 2024</li>
+                        <li>Halloween Game Jam 2024</li>
+                        <li>Art Jam 2025</li>
+                        <li>Spring Game Jam 2025</li>
                         <li>Git/Github Source Control Lecture</li>
                     </ul>
                 </div>
