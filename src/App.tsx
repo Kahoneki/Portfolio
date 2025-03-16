@@ -5,7 +5,7 @@ import Home from "./Home"
 import About from "./About"
 import Portfolio from "./Portfolio"
 import PortfolioItemPage from "./PortfolioItemPage"
-import Contact from "./Contact"
+import Blog from "./Blog"
 
 
 function ScrollToTopOnSiteChange() {
@@ -66,7 +66,7 @@ return (
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:projectName" element={<PortfolioItemPage />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </div>
   </div>
