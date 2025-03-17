@@ -5,16 +5,16 @@ function PortfolioItem({path, projectName, description}: {path:string, projectNa
 {
     return (
         <Link to={"/portfolio/" + projectName}
-        className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-4 lg:p-6">
+        className="group rounded-3xl col-span-2 first:col-span-3 nth-2:col-span-3 bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-4 lg:p-6">
             
             {/* Image + overlay + description container */}
             <div className="h-5/6 relative">
 
                 {/* Image */}
-                <img className="w-full h-full aspect-[16/9] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
+                <img className="w-full h-full aspect-16/9 object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
             
                 {/* Description */}
                 <p className="absolute -bottom-12 px-2 text-center text-thumbnailHoverDescription opacity-0 group-hover:bottom-2 group-hover:opacity-100 transition-all duration-300">{description}</p>
@@ -103,7 +103,7 @@ return (
     <>
     <Navbar></Navbar>
     <h1 className="text-5xl font-bold pt-6 text-center">Click to learn more!</h1>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-4 p-8">
+    <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-4 p-8">
     {
         thumbnails.map(t => (
             <PortfolioItem key={t.title} path={t.path} projectName={t.title} description={t.description}></PortfolioItem>
