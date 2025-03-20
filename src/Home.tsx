@@ -12,11 +12,6 @@ function Home()
 
     const carousel = [
         {
-            path: "OpenGL Render Engine.jpg",
-            title: "OpenGL Render Engine (Neki)",
-            description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM",
-        },
-        {
             path: "Earth Renderer.jpg",
             title: "Dynamic Tesselation",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset"
@@ -27,9 +22,9 @@ function Home()
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
         },
         {
-            path: "Boids.jpg",
-            title: "Boids",
-            description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
+          path: "Boids.jpg",
+          title: "Boids",
+          description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
         },
         {
             path: "Grass Renderer.jpg",
@@ -42,9 +37,9 @@ function Home()
             description: "Implementation of an advanced stencil buffer rendering technique"
         },
         {
-            path: "TotallyNotMinecraft.jpg",
-            title: "Unity Voxel Engine",
-            description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
+          path: "TotallyNotMinecraft.jpg",
+          title: "Unity Voxel Engine",
+          description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
         },
         {
             path: "Post Processing.jpg",

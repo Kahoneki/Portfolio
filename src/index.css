@@ -1,34 +1,6 @@
-@import 'tailwindcss';
-
-@theme {
-  --font-*: initial;
-  --font-sans: Poppins, sans-serif;
-
-  --color-background: #fdeef5;
-  --color-sidebar: #ffafbc;
-  --color-text: #59002a;
-  --color-linkHover: #ffd6dd;
-  --color-thumbnailHoverDescription: #fdeef5;
-  --color-contentSeparator: #ff5d77;
-}
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
@@ -45,15 +17,15 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-   @apply text-contentSeparator!;
-   @apply -translate-y-16!;
+   @apply text-contentSeparator !important;
+   @apply -translate-y-16 !important;
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-contentSeparator!;
+  @apply bg-contentSeparator !important;
 }
 
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
-  @apply translate-y-1!;
+  @apply translate-y-1 !important;
 }
