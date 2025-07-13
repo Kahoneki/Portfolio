@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import { useParams } from "react-router-dom"
+// import React, { useState } from 'react'
+// import { useParams } from "react-router-dom"
 
-function Sidebar()
-{
-    const { blogName } = useParams<{ blogName: string }>()
+// function Sidebar()
+// {
+//     const { blogName } = useParams<{ blogName: string }>()
 
-return (
-    <>
+// return (
+//     <>
     
-    </>
-)
-}
+//     </>
+// )
+// }
 
-export default Sidebar
+// export default Sidebar

@@ -20,7 +20,7 @@ return (
         {location.pathname == "/" ? <></> : <NavbarItem href="/" pathname={location.pathname}>Home</NavbarItem>}
         <NavbarItem href="/about" pathname={location.pathname}>About</NavbarItem>
         <NavbarItem href="/portfolio" pathname={location.pathname}>Portfolio</NavbarItem>
-        <NavbarItem href="/blog" pathname={location.pathname}>Blog</NavbarItem>
+        <NavbarItem href="/contact" pathname={location.pathname}>Contact</NavbarItem>
     
     </div>
     </>
