@@ -388,7 +388,7 @@ function PortfolioItemPage()
             <Navbar></Navbar>
 
             {/* Single entry (image + description) */}
-            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 mb-8">
+            <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
                 
                 {/* Image */}
                 <div className="bg-contentSeparator h-full max-h-[600px] p-6 m-4 rounded-3xl lg:sticky top-20">
@@ -396,7 +396,7 @@ function PortfolioItemPage()
                 </div>
 
                 {/* Description */}
-                <div className="flex flex-col h-full m-4 p-4 gap-y-4 justify-center bg-contentSeparator rounded-3xl">
+                <div className="flex flex-col m-4 p-4 gap-y-4 justify-center bg-contentSeparator rounded-3xl">
                     <h1 className="pl-4 py-8 bg-linkHover rounded-3xl text-4xl font-bold">{portfolioItem.title}</h1>
                     {
                         portfolioItem.topLevelDescription.map(d => (
@@ -415,7 +415,7 @@ function PortfolioItemPage()
                         <div className="flex flex-col">
 
                             {/* Image */}
-                            <div className="bg-contentSeparator p-6 m-4 rounded-3xl">
+                            <div className="bg-contentSeparator p-6 ml-4 mb-4 mr-4 rounded-3xl">
                                 <img src={"Images/PortfolioItemImages/" + portfolioItem.title + "/" + di.imgPath} className="w-full h-full rounded-xl"></img>
                             </div>
 
