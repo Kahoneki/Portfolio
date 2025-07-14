@@ -11,7 +11,7 @@ function PortfolioItem({large, path, projectName, description}: {large: boolean,
             <div className="relative w-full">
 
                 {/* Image */}
-                <img className="w-full h-full aspect-[2/1] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
+                <img className="w-full h-full aspect-[2.15/1] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
                 {/* Gradient overlay */}
                 <div className="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
