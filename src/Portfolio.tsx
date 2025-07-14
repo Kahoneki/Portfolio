@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 function PortfolioItem({path, projectName, description}: {path:string, projectName:string, description:string})
 {
     return (
-        <Link to={"/portfolio/" + projectName}
-        className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-4 lg:p-6">
+        <Link to={"/portfolio/" + projectName} className="group rounded-3xl bg-contentSeparator hover:bg-sidebar transition-all duration-300 p-4 lg:p-6">
             
             {/* Image + overlay + description container */}
             <div className="h-5/6 relative">
@@ -14,7 +13,7 @@ function PortfolioItem({path, projectName, description}: {path:string, projectNa
                 <img className="w-full h-full aspect-[16/9] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
+                <div className="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
             
                 {/* Description */}
                 <p className="absolute -bottom-12 px-2 text-center text-thumbnailHoverDescription opacity-0 group-hover:bottom-2 group-hover:opacity-100 transition-all duration-300">{description}</p>
