@@ -70,7 +70,7 @@ return (
                 <h2 className="text-4xl font-bold">Technical Skills</h2>
                 
                 <div className="pt-4">
-                    <h3 className="text-2xl font-bold">Graphics</h3>border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar
+                    <h3 className="text-2xl font-bold">Graphics</h3>
                     <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
                         <li>OpenGL</li>
                         <li>Nvidia Nsight</li>
