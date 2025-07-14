@@ -9,10 +9,10 @@ function PortfolioItemPage()
         // OpenGL Render Engine
         {
             title:"OpenGL Render Engine (Neki)",
-            topLevelImgPath: "OpenGL Render Engine.jpg",
+            topLevelImgPath: "OpenGL Render Engine.png",
             topLevelDescription: [
                 "Neki is an in-the-works render engine built in OpenGL with GLFW/GLAD and GLM.\nThis engine will encompass all of my current and future OpenGL projects. As more features are implemented, this page will be updated.",
-                "Currently contains:\n- 3D Rendering\n- First Person Camera\n- Blinn-Phong Specular Lighting Model (+ Rim Lighting and Custom Materials)\n- Bindless Textures\n- Normal Maps\n- Stencil-Buffer Portal Rendering\n- Postprocessing Pipeline\n\nTo do:\n- External 3D Model Loading\n- Dynamic Tessellation\n- GPU Instancing (and grass rendering)\n- More Material Types\n- Water Rendering (with sum of sines / potentially FFT)\n- Boids\n- More Post Processing Effects (e.g. Depth of Field, Fisheye)\n- Anti-Aliasing (support for multiple types)\n\nTo do (Advanced):\n- Particle Simulations\n- Volumetric Effects (e.g.: Fog, Clouds, Atmosphere)"
+                "Currently contains:\n- 3D Rendering\n- First Person Camera\n- Blinn-Phong Specular Lighting Model (+ Rim Lighting and Custom Materials)\n- Bindless Textures\n- Normal Maps\n- Stencil-Buffer Portal Rendering\n- Postprocessing Pipeline\n- External 3D Model Loading\n\nTo do:\n- Dynamic Tessellation\n- GPU Instancing (and grass rendering)\n- More Material Types\n- Water Rendering (with sum of sines / potentially FFT)\n- Boids\n- More Post Processing Effects (e.g. Depth of Field, Fisheye)\n- Anti-Aliasing (support for multiple types)\n\nTo do (Advanced):\n- Particle Simulations\n- Volumetric Effects (e.g.: Fog, Clouds, Atmosphere)"
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
@@ -77,21 +77,46 @@ function PortfolioItemPage()
                         "The current system treats all the effects as one large multi-pass effect, and hence has built-in support for more complex multi-pass effects such as depth of field. It also has support for providing required user-specified data to the shader via a buffer through a class the user can interface through (e.g.: the Saturation class gives the ability to set the strength of the saturation).",
                     ]
                 },
+                {
+                    imgPath:"OpenGL Render Engine.png",
+                    description: [
+                        "3D model loading",
+                        "The above scene demonstrates loading a model (Sponza) using Assimp. As models are loaded, their textures are automatically supplied to the corresponding textures in the shader (e.g.: a model's albedo textures are automatically made resident for the shader and exposed through the material struct. Same for normal and specular maps.",
+                        "In addition, this point marked a change in verbosity in the lighting and material controls. Prior to this, almost everything was configurable (e.g.: an object's material's ambient light colour). It took a long time to set up all the controls in a way which looked nice, and so because of this (and because of lack of physical plausibility), I decided to cut back on the controls available."
+                    ]
+                },
             ],
         },
 
         // Online Multiplayer PS5 Game
         {
             title:"Online Multiplayer PS5 Game",
-            topLevelImgPath: "Online Multiplayer PS5 Game.jpg",
+            topLevelImgPath: "Online Multiplayer PS5 Game.png",
             topLevelDescription: [
-                "For our 2nd year module \"CMP208: Games Programming and Systems Architecture\", we are using the PlayStation 5 Development Kits to create a game in a group. The in-house framework we're using is still under development and doesn't have support for many of the things our team are wanting to include, so this has involved interfacing directly with the PS5 hardware.",
-                "The following are a list of features (both implemented and planned):\n- Cross-Platform Development for x64 and Prospero (PS5 SDK)\n- Modular input framework supporting complex cross-platform input mappings to queryable actions\n- Custom PS5 trigger and haptic effects\n- Complex and realistic 3D Physics with collisions (Jolt)\n- Online multiplayer in a P2P LAN environment featuring rollback netcode architecture\n- Custom Rendering with HLSL and PSSL shaders (graphics and compute)\n- File reading/writing for long-term progression\n- Music and audio system\n- Procedural map generation\n- Procedural planets/asteroids (using compute shaders)",
-                "The in-house framework we have to use for this module is still in development, textured 3D models have not yet implemented into the engine which is why the game currently looks like that. We've enquired and been informed that textures will be implemented soon.",
+                "For our 2nd year module \"CMP208: Games Programming and Systems Architecture\", we used the PlayStation 5 Development Kits to create a game in a group. The in-house framework we had to use was still under development for much of the module (and still is!) and didn't have support for many of the things our team were wanting to include - notably it took many weeks for 3D model support to be added, and many more to get support for textures, so this involved interfacing directly with the PS5 hardware.",
+                "The following are a list of features:\n-Cross-Platform Development for x64 and Prospero (PS5 SDK)\n-Entity-Component-System (ECS) paradigm\n-Modular input framework supporting complex cross-platform input mappings to queryable actions\n-Custom PS5 trigger and haptic effects\n-Complex and realistic 3D Physics with collisions (Jolt)\n-Online multiplayer in a P2P LAN environment featuring rollback netcode architecture\n-Custom Rendering with HLSL and PSSL shaders\n-File reading/writing for long-term progression\n-Music and audio system\n-Procedural map generation\n-Procedural planets/asteroids",
+                "My main contributions to the project involved:\n-Overhauling the in-house renderer to add multi-pass support for shadows and postprocessing\n-Managing project deadlines and overseeing completion of tasks through Notion\n-Writing a modular input framework for complex cross-platform input mappings, trigger resistivity, and haptic feedback\n-Writing a custom tooling batch script and utility class to make the process of linking textures with a mesh easier (which the in-house framework would've otherwise required we had done manually)\n-Gameplay programming for key systems such as combat, crafting, harvesting, players, upgrades\n-Audio programming using PlayStation's dedicated software",
                 "Please note that due to Sony's NDA, the code for this project is private and details I can share are limited. As a team, we are looking into ways of abstracting the PS5 code into a separate project so that the bulk of the code (and low-level x64) can be made public."
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [
+                {
+                    imgPath:"Title Screen.png",
+                    description: [
+                        "Title screen with options to host a local game, join a local game, play singleplayer, or open the options menu to change video and audio settings."
+                    ]
+                },
+                {
+                    imgPath:"Gameplay 1.jpeg",
+                    description: [
+                    ]
+                },
+                {
+                    imgPath:"Gameplay 2.jpeg",
+                    description: [
+                        "Gameplay showcasing highly-customisable postprocessed raymarched volumetric fog designed to expand in stages to create a fog-of-war gameplay mechanic.",
+                    ]
+                },
             ],
         },
 
@@ -395,13 +420,15 @@ function PortfolioItemPage()
                             </div>
 
                             {/* Description */}
-                            <div className="flex flex-col m-4 mt-0 p-4 gap-y-4 bg-contentSeparator rounded-3xl">
-                            {
-                                di.description.map(d => (
-                                    <p className="flex-1 p-4 bg-linkHover rounded-3xl">{d}</p>
-                                ))
+                            { di.description.length > 0 &&
+                                <div className="flex flex-col m-4 mt-0 p-4 gap-y-4 bg-contentSeparator rounded-3xl">
+                                {
+                                    di.description.map(d => (
+                                        <p className="flex-1 p-4 bg-linkHover rounded-3xl">{d}</p>
+                                    ))
+                                }
+                                </div>
                             }
-                            </div>
 
                         </div>
                     </div>

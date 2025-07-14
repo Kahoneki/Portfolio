@@ -12,9 +12,24 @@ function Home()
 
     const carousel = [
         {
+            path: "OpenGL Render Engine.png",
+            title: "OpenGL Render Engine (Neki)",
+            description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM"
+        },
+        {
+            path: "Online Multiplayer PS5 Game.png",
+            title: "Online Multiplayer PS5 Game",
+            description: "Cross-Platform action-rts game for Windows and the PS5 featuring online P2P LAN support, custom shaders, and realistic 3D physics"
+        },
+        {
             path: "Earth Renderer.jpg",
             title: "Dynamic Tesselation",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset"
+        },
+        {
+            path: "Limb 4 Limb.png",
+            title: "Online Multiplayer Fighting Game",
+            description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents."
         },
         {
             path: "Ocean Wave Simulation.jpg",
@@ -22,9 +37,9 @@ function Home()
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
         },
         {
-          path: "Boids.jpg",
-          title: "Boids",
-          description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
+            path: "Boids.jpg",
+            title: "Boids",
+            description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
         },
         {
             path: "Grass Renderer.jpg",
@@ -37,9 +52,9 @@ function Home()
             description: "Implementation of an advanced stencil buffer rendering technique"
         },
         {
-          path: "TotallyNotMinecraft.jpg",
-          title: "Unity Voxel Engine",
-          description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
+            path: "TotallyNotMinecraft.jpg",
+            title: "Unity Voxel Engine",
+            description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
         },
         {
             path: "Post Processing.jpg",
@@ -63,9 +78,8 @@ return (
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
         <ul className="mt-8 font-medium pt-4 space-y-8 list-disc">
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
-            <li>2nd year student studying BSc (Hons) Computer Games Technology</li>
+            <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
-            <li>Internal Events Manager @ Abertay Game Development Society</li>
         </ul>
         </div>
 
@@ -112,9 +126,8 @@ return (
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
         <ul className="mt-8 font-medium pt-4 space-y-8 list-disc">
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
-            <li>2nd year student studying BSc (Hons) Computer Games Technology</li>
+            <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
-            <li>Internal Events Manager @ Abertay Game Development Society</li>
         </ul>
         </div>
 

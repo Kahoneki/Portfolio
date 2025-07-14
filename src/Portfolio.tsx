@@ -32,13 +32,13 @@ function Portfolio()
     const thumbnails = [
         {
             link: "/opengl-render-engine",
-            path: "OpenGL Render Engine.jpg",
+            path: "OpenGL Render Engine.png",
             title: "OpenGL Render Engine (Neki)",
             description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM",
         },
         {
             link: "/online-ps5-game",
-            path: "Online Multiplayer PS5 Game.jpg",
+            path: "Online Multiplayer PS5 Game.png",
             title: "Online Multiplayer PS5 Game",
             description: "Cross-Platform action-rts game for Windows and the PS5 featuring online P2P LAN support, custom shaders, and realistic 3D physics",
         },

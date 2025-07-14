@@ -70,7 +70,7 @@ return (
                 <h2 className="text-4xl font-bold">Technical Skills</h2>
                 
                 <div className="pt-4">
-                    <h3 className="text-2xl font-bold">Graphics</h3>
+                    <h3 className="text-2xl font-bold">Graphics</h3>border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar
                     <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
                         <li>OpenGL</li>
                         <li>Nvidia Nsight</li>
@@ -137,7 +137,7 @@ return (
                 <div className="pt-4">
                     <h3 className="text-2xl font-bold">BSc (Hons) Computer Games Technology - Abertay University</h3>
                     <p className="text-lg italic">September 2023 - Present</p>
-                    <p className="text-lg font-bold">GPA: 4.42 / 4.5</p>
+                    <p className="text-lg font-bold">GPA: 4.4 / 4.5</p>
                     <ul className="list-none">
                         
                         <li>
@@ -167,8 +167,8 @@ return (
                                     <li>CMP203 (Graphics Programming) - A+</li>
                                     <li>CMP201 (Data, Structures, and Algorithms 1) - A+</li>
                                     <li>MAT201 (Applied Mathematics 2) - A+</li>
-                                    <li>CMP202 (Data, Structures, and Algorithms 2) - [In Progress]</li>
-                                    <li>CMP208 (Games Programming and Systems Architecture) - [In Progress]</li>
+                                    <li>CMP202 (Data, Structures, and Algorithms 2) - A+</li>
+                                    <li>CMP208 (Games Programming and Systems Architecture) - A</li>
                                 </ul>
                             </div>
                         </li>
@@ -182,7 +182,7 @@ return (
                     <p className="text-lg italic">August 2017 - June 2023</p>
                     <p className="text-lg font-bold">GPA: 4.92 / 5.0</p>
                     <p><span className="font-semibold">Coding Club: </span>Founded the coding club in S6, sparking interest in computing and leading workshops for younger students.</p>
-                    <p><span className="font-semibold">Maths Ambassador: </span>Served as a Maths Ambassador in S6, running events to encourage engagement in Mathematics</p>
+                    <p><span className="font-semibold">Maths Ambassador: </span>Served as a Maths Ambassador in S6, running events to encourage engagement in Mathematics and helping to teach primary school students</p>
                     <p><span className="font-semibold">Career Ready: </span>Took part in a program designed to give students real-world industry experience through mentorship, masterclasses, and a month long internship (more information further down).</p>
 
                     <h4 className="font-semibold">Grades:</h4>
@@ -195,6 +195,8 @@ return (
                 {/* End of high school */}
 
             </div>
+
+
             {/* End of education */}
 
 
@@ -238,24 +240,30 @@ return (
             <div className="h-[4px] my-12 bg-sidebar"></div>
 
 
-                {/* AGDS */}
-                <div className="px-4">
-                
-                <h2 className="text-4xl font-bold">Abertay Game Development Society</h2>
-                <div className="pt-4">
-                    <h3 className="text-2xl font-bold">Internal Events Manager</h3>
-                    <p className="text-lg italic">May 2024 - Present</p>
-                    <p>Elected by my peers to lead this position, it is my proud responsibility to take feedback from our members and turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritise representation and transparency, ensuring all members feel heard and involved. This role also involves maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
-                    <p>Notable large events I've organised:</p>
-                    <ul className="list-disc pl-6">
-                        <li>Freshers Game Jam 2024</li>
-                        <li>Halloween Game Jam 2024</li>
-                        <li>Art Jam 2025</li>
-                        <li>Spring Game Jam 2025</li>
-                        <li>Git/Github Source Control Lecture</li>
-                    </ul>
+            {/* AGDS */}
+            <div className="flex flex-col lg:flex-row">
+                <div className="px-4 w-full lg:w-3/5 ">
+                    <h2 className="text-4xl font-bold">Abertay Game Development Society</h2>
+                    <div className="pt-4">
+                        <h3 className="text-2xl font-bold">Internal Events Manager</h3>
+                        <p className="text-lg italic">May 2024 - June 2025</p>
+                        <p>Elected by my peers to lead this position, it was my proud responsibility to take feedback from our members and turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritised representation and transparency, ensuring all members felt heard and involved. This role also involved maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
+                        <p>Notable large events I've organised:</p>
+                        <ul className="list-disc pl-6">
+                            <li>Freshers Game Jam 2024</li>
+                            <li>Halloween Game Jam 2024</li>
+                            <li>Art Jam 2025</li>
+                            <li>Spring Game Jam 2025</li>
+                            <li>Git/Github Source Control Lecture</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <img className="lg:w-2/5 object-cover border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar" src="Images/AGDS Freshers Jam.jpeg">
+
+                </img>
             </div>
+
             {/* End of AGDS */}
 
 
