@@ -241,7 +241,7 @@ return (
 
 
             {/* AGDS */}
-            <div className="flex flex-col lg:flex-row">
+            <div className="flex flex-col lg:flex-row gap-8">
                 <div className="px-4 w-full lg:w-3/5 ">
                     <h2 className="text-4xl font-bold">Abertay Game Development Society</h2>
                     <div className="pt-4">
