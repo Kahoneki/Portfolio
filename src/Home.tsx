@@ -4,6 +4,8 @@ import Navbar from "./Navbar"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
+import {Link}  from "react-router-dom";
+
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
 
@@ -19,46 +21,55 @@ function Home()
         {
             path: "Online Multiplayer PS5 Game.png",
             title: "Online Multiplayer PS5 Game",
+            link: "",
             description: "Cross-Platform action-rts game for Windows and the PS5 featuring online P2P LAN support, custom shaders, and realistic 3D physics"
         },
         {
             path: "Earth Renderer.jpg",
             title: "Dynamic Tesselation",
+            link: "",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset"
         },
         {
             path: "Limb 4 Limb.png",
             title: "Online Multiplayer Fighting Game",
+            link: "",
             description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents."
         },
         {
             path: "Ocean Wave Simulation.jpg",
             title: "Ocean Wave Simulation",
+            link: "",
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
         },
         {
             path: "Boids.jpg",
             title: "Boids",
+            link: "",
             description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
         },
         {
             path: "Grass Renderer.jpg",
             title: "Grass Renderer",
+            link: "",
             description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm"
         },
         {
             path: "Portal Renderer.jpg",
             title: "Portal Renderer",
+            link: "",
             description: "Implementation of an advanced stencil buffer rendering technique"
         },
         {
             path: "TotallyNotMinecraft.jpg",
             title: "Unity Voxel Engine",
+            link: "",
             description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
         },
         {
             path: "Post Processing.jpg",
             title: "Post-Processing",
+            link: "",
             description: "Off-screen deferred-rendering with MSAA anti-aliasing, saturation, fog, and vignetting"
         },
 
@@ -103,9 +114,11 @@ return (
         {
             carousel.map(c => (
                 <SwiperSlide>
-                    <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
-                    <p className="mt-4 text-center text-text font-bold">{c.title}</p>
-                    <p className="text-center text-text mb-6">{c.description}</p>
+                    <Link to={"/portfolio/" + c.title}>
+                        <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
+                        <p className="mt-4 text-center text-text font-bold">{c.title}</p>
+                        <p className="text-center text-text mb-6">{c.description}</p>
+                    </Link>
                 </SwiperSlide>
             ))
         }
@@ -154,9 +167,11 @@ return (
             {
                 carousel.map(c => (
                     <SwiperSlide>
-                        <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
-                        <p className="mt-4 text-center text-text font-bold">{c.title}</p>
-                        <p className="text-center text-text">{c.description}</p>
+                        <Link to={"/portfolio/" + c.title}>
+                            <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
+                            <p className="mt-4 text-center text-text font-bold">{c.title}</p>
+                            <p className="text-center text-text">{c.description}</p>
+                        </Link>
                     </SwiperSlide>
                 ))
             }
