@@ -16,7 +16,7 @@ function PortfolioItem({large, path, projectName, description, repoLink}: {large
                 {
                     //Conditionally render GitHub icon
                     repoLink && (
-                        <img src="Images/github.svg" className={"absolute z-9" + (large ? " bottom-6 right-6 w-20 h-20" : " bottom-3 right-3 w-10 h-10")} alt="GitHub repository link"/>
+                        <img src="Images/github.svg" className={"absolute z-9 bottom-3 right-3 w-10 h-10" + (large ? " sm:bottom-6 sm:right-6 sm:w-20 sm:h-20" : " ")} alt="GitHub repository link"/>
                     )
                 }
 
@@ -24,7 +24,7 @@ function PortfolioItem({large, path, projectName, description, repoLink}: {large
                 <div className="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
             
                 {/* Description */}
-                <p className={"absolute -bottom-12 px-4 text-center text-thumbnailHoverDescription opacity-0 group-hover:bottom-4 group-hover:opacity-100 transition-all duration-300" + (large ? " text-sm md:text-4xl" : " text-sm md:text-lg")}>{description}</p>
+                <p className={"absolute -bottom-12 px-4 text-center text-thumbnailHoverDescription opacity-0 group-hover:bottom-4 group-hover:opacity-100 transition-all duration-300" + (large ? " text-sm sm:text-4xl" : " text-sm md:text-lg")}>{description}</p>
 
             </div>
 
