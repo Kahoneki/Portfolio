@@ -1,7 +1,7 @@
 import Navbar from "./Navbar"
 import { Link } from "react-router-dom";
 
-function PortfolioItem({large, path, projectName, description, repoLink}: {large: boolean, path:string, projectName:string, description:string, repoLink?:string})
+function PortfolioItem({large, path, projectName, description, repoLink, youtubeLink}: {large: boolean, path:string, projectName:string, description:string, repoLink?:string, youtubeLink?:string})
 {
     return (
         <Link to={"/portfolio/" + projectName}
@@ -13,10 +13,15 @@ function PortfolioItem({large, path, projectName, description, repoLink}: {large
                 {/* Image */}
                 <img className="w-full h-full aspect-[2.15/1] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
+                {/* Conditionally render GitHub and YouTube icons */}
                 {
-                    //Conditionally render GitHub icon
                     repoLink && (
-                        <img src="Images/github.svg" className={"absolute z-9 bottom-3 right-3 w-10 h-10" + (large ? " sm:bottom-6 sm:right-6 sm:w-20 sm:h-20" : " ")} alt="GitHub repository link"/>
+                        <img src="Images/github.svg" className={"absolute z-9 bottom-3 right-3 w-10 h-10" + (large ? " sm:bottom-6 sm:right-6 sm:w-20 sm:h-20" : " ")} alt="Contains public GitHub repository"/>
+                    )
+                }
+                {
+                    youtubeLink && (
+                        <img src="Images/youtube.png" className={"absolute z-9 bottom-3 left-3 h-10" + (large ? " sm:bottom-6 sm:right-6 sm:h-20" : " ")} alt="Contains YouTube video demonstration"/>
                     )
                 }
 
@@ -55,6 +60,7 @@ function Portfolio()
             title: "Dynamic Tesselation",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Tesselation",
+            youtubeLink: "https://youtu.be/_hhvRQ-iITQ",
         },
         {
             large: false,
@@ -63,6 +69,7 @@ function Portfolio()
             title: "Ocean Wave Simulation",
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/3D",
+            youtubeLink: "https://youtu.be/hGlmlG_OGyY",
         },
         {
             large: true,
@@ -78,6 +85,7 @@ function Portfolio()
             title: "Online Multiplayer Fighting Game",
             description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents.",
             repoLink: "https://github.com/Kahoneki/Limb-4-Limb",
+            youtubeLink: "https://youtu.be/uM-ZlpQ_S8c",
         },
         {
             large: false,
@@ -86,6 +94,7 @@ function Portfolio()
             title: "Boids",
             description: "Flocking simulation via Boids algorithm with GPGPU GLSL",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Boids",
+            youtubeLink: "https://youtu.be/JbbAuV2iqbg",
         },
         {
             large: false,
@@ -94,6 +103,7 @@ function Portfolio()
             title: "Grass Renderer",
             description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Data",
+            youtubeLink: "https://youtu.be/9_qga-DnfJg",
         },
         {
             large: false,
@@ -102,6 +112,7 @@ function Portfolio()
             title: "Portal Renderer",
             description: "Implementation of an advanced stencil buffer rendering technique",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Portals",
+            youtubeLink: "https://youtu.be/KOPil_RIRA4",
         },
         {
             large: false,
@@ -126,6 +137,7 @@ function Portfolio()
             title: "Depth of Field",
             description: "Multi-pass-rendering algorithm making use of 2D parallel prefix sums, ping-pong buffering, and summed area tables",
             repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Compute%20Shaders",
+            youtubeLink: "https://youtu.be/53Yq-Uiqcok",
         },
 
       ];
@@ -138,7 +150,7 @@ return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:gap-8 md:p-8">
         {
             thumbnails.map(t => (
-                <PortfolioItem large={t.large} key={t.title} path={t.path} projectName={t.title} description={t.description} repoLink={t.repoLink}></PortfolioItem>
+                <PortfolioItem large={t.large} key={t.title} path={t.path} projectName={t.title} description={t.description} repoLink={t.repoLink} youtubeLink={t.youtubeLink}></PortfolioItem>
             ))
         }
         </div>
