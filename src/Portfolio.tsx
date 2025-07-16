@@ -1,7 +1,7 @@
 import Navbar from "./Navbar"
 import { Link } from "react-router-dom";
 
-function PortfolioItem({large, path, projectName, description}: {large: boolean, path:string, projectName:string, description:string})
+function PortfolioItem({large, path, projectName, description, repoLink}: {large: boolean, path:string, projectName:string, description:string, repoLink?:string})
 {
     return (
         <Link to={"/portfolio/" + projectName}
@@ -13,6 +13,13 @@ function PortfolioItem({large, path, projectName, description}: {large: boolean,
                 {/* Image */}
                 <img className="w-full h-full aspect-[2.15/1] object-cover rounded-xl" src={"Images/Thumbnails/" + path}></img>
                 
+                {
+                    //Conditionally render GitHub icon
+                    repoLink && (
+                        <img src="Images/github.svg" className={"absolute z-9" + (large ? " bottom-6 right-6 w-20 h-20" : " bottom-3 right-3 w-10 h-10")} alt="GitHub repository link"/>
+                    )
+                }
+
                 {/* Gradient overlay */}
                 <div className="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 hidden group-hover:block transition-all duration-300"></div>
             
@@ -39,6 +46,7 @@ function Portfolio()
             path: "OpenGL Render Engine.png",
             title: "OpenGL Render Engine (Neki)",
             description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM",
+            repoLink: "https://github.com/Kahoneki/OpenGL-Render-Engine",
         },
         {
             large: false,
@@ -46,6 +54,7 @@ function Portfolio()
             path: "Earth Renderer.jpg",
             title: "Dynamic Tesselation",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Tesselation",
         },
         {
             large: false,
@@ -53,6 +62,7 @@ function Portfolio()
             path: "Ocean Wave Simulation.jpg",
             title: "Ocean Wave Simulation",
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/3D",
         },
         {
             large: true,
@@ -67,6 +77,7 @@ function Portfolio()
             path: "Limb 4 Limb.png",
             title: "Online Multiplayer Fighting Game",
             description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents.",
+            repoLink: "https://github.com/Kahoneki/Limb-4-Limb",
         },
         {
             large: false,
@@ -74,6 +85,7 @@ function Portfolio()
             path: "Boids.jpg",
             title: "Boids",
             description: "Flocking simulation via Boids algorithm with GPGPU GLSL",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Boids",
         },
         {
             large: false,
@@ -81,6 +93,7 @@ function Portfolio()
             path: "Grass Renderer.jpg",
             title: "Grass Renderer",
             description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Data",
         },
         {
             large: false,
@@ -88,6 +101,7 @@ function Portfolio()
             path: "Portal Renderer.jpg",
             title: "Portal Renderer",
             description: "Implementation of an advanced stencil buffer rendering technique",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Portals",
         },
         {
             large: false,
@@ -95,20 +109,23 @@ function Portfolio()
             path: "TotallyNotMinecraft.jpg",
             title: "Unity Voxel Engine",
             description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion",
+            repoLink: "https://github.com/Kahoneki/Minecraft-Clone",
         },
         {
             large: false,
             link: "/post-processing",
             path: "Post Processing.jpg",
             title: "Post-Processing",
-            description: "Off-screen deferred-rendering with MSAA anti-aliasing, saturation, fog, and vignetting",
+            description: "Off-screen multi-pass-rendering with MSAA anti-aliasing, saturation, fog, and vignetting",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Data",
         },
         {
             large: false,
             link: "/depth-of-field",
             path: "Depth of Field.jpg",
             title: "Depth of Field",
-            description: "Deferred-rendering algorithm making use of 2D parallel prefix sums, ping-pong buffering, and summed area tables",
+            description: "Multi-pass-rendering algorithm making use of 2D parallel prefix sums, ping-pong buffering, and summed area tables",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Compute%20Shaders",
         },
 
       ];
@@ -121,7 +138,7 @@ return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 md:gap-8 md:p-8">
         {
             thumbnails.map(t => (
-                <PortfolioItem large={t.large} key={t.title} path={t.path} projectName={t.title} description={t.description}></PortfolioItem>
+                <PortfolioItem large={t.large} key={t.title} path={t.path} projectName={t.title} description={t.description} repoLink={t.repoLink}></PortfolioItem>
             ))
         }
         </div>

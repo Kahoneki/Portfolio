@@ -6,9 +6,10 @@ function PortfolioItemPage()
     const { projectName } = useParams<{ projectName: string }>()
 
     const itemPageInfo = [
-        // OpenGL Render Engine
+        //OpenGL Render Engine
         {
             title:"OpenGL Render Engine (Neki)",
+            repoLink: "https://github.com/Kahoneki/OpenGL-Render-Engine",
             topLevelImgPath: "OpenGL Render Engine.png",
             topLevelDescription: [
                 "Neki is an in-the-works render engine built in OpenGL with GLFW/GLAD and GLM.\nThis engine will encompass all of my current and future OpenGL projects. As more features are implemented, this page will be updated.",
@@ -123,6 +124,7 @@ function PortfolioItemPage()
         // Dynamic Tesselation
         {
             title:"Dynamic Tesselation",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Tesselation",
             topLevelImgPath: "Earth Renderer.jpg",
             topLevelDescription: [
                 "Tesselation is the process of subdividing a mesh patch, creating more vertices. These new vertices are interpolated between the input vertices (the \"control points\") and can therefore be modified just like any other vertex, letting us effectively control the detail of the mesh by adjusting the number of subdivisions.",
@@ -173,6 +175,7 @@ function PortfolioItemPage()
         //Ocean Wave Simulation
         {
             title:"Ocean Wave Simulation",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/3D",
             topLevelImgPath: "Ocean Wave Simulation.jpg",
             topLevelDescription: [
                 "'Sum of Sines' is a famous algorithm for faking water waves in a real-time context. It involves adding up random sine waves of differing amplitudes, frequencies, directions, and speeds to use as heightmap data.",
@@ -220,6 +223,7 @@ function PortfolioItemPage()
         //Online Multiplayer Fighting Game
         {
             title:"Online Multiplayer Fighting Game",
+            repoLink: "https://github.com/Kahoneki/Limb-4-Limb",
             topLevelImgPath: "Limb 4 Limb.png",
             topLevelDescription: [
                 "For my 1st year C++ Games Programming coursework project, I made an online real-time fighting game in SFML.",
@@ -251,6 +255,7 @@ function PortfolioItemPage()
         //Grass Renderer
         {
             title:"Grass Renderer",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Data",
             topLevelImgPath: "Grass Renderer.jpg",
             topLevelDescription: [
                 "The main time-bottleneck of rendering lots of meshes in real-time is CPU-GPU communication. To be able to render a dense grass field such as this (4 million blades), making millions of draw calls a frame will simply not suffice.",
@@ -299,6 +304,7 @@ function PortfolioItemPage()
         //Portal Renderer
         {
             title:"Portal Renderer",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Portals",
             topLevelImgPath: "Portal Renderer.jpg",
             topLevelDescription: [
                 "The stencil buffer is a screenspace texture that can be attached to a framebuffer. Unlike the colour and depth buffer, it holds arbitrary data that can be used for any purpose.",
@@ -314,6 +320,7 @@ function PortfolioItemPage()
         //Unity Voxel Engine
         {
             title:"Unity Voxel Engine",
+            repoLink: "https://github.com/Kahoneki/Minecraft-Clone",
             topLevelImgPath: "TotallyNotMinecraft.jpg",
             topLevelDescription: [
                 `Based on Minecraft, this Unity Project features:
@@ -336,6 +343,7 @@ function PortfolioItemPage()
         //Post-Processing
         {
             title:"Post-Processing",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Data",
             topLevelImgPath: "Post Processing.jpg",
             topLevelDescription: [
                 "Deferred rendering is the practice of rendering your scene to a separate framebuffer (i.e.: not the one that gets displayed to the user), then using the colour buffer from the offscreen framebuffer as a normal texture, it can be drawn to the default framebuffer as a quad on the screen.",
@@ -351,6 +359,7 @@ function PortfolioItemPage()
         //Depth of Field
         {
             title:"Depth of Field",
+            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Compute%20Shaders",
             topLevelImgPath: "Depth of Field.jpg",
             topLevelDescription: [
                 "A prefix sum is an algorithm which takes as input an array of numbers and returns a new array of numbers where each element is the sum of all the elements up to that point in the original list. Given the algorithm's sequential tallying nature, at first glance, it would seem to not lend itself very well to being parallelised. However, this is in fact an extremely parallelisable algorithm with a parallel time complexity of O(log(n)). This algorithm has been used here to generate a convincing depth of field effect.",
@@ -398,6 +407,14 @@ function PortfolioItemPage()
                 {/* Description */}
                 <div className="flex flex-col m-4 p-4 gap-y-4 justify-center bg-contentSeparator rounded-3xl">
                     <h1 className="pl-4 py-8 bg-linkHover rounded-3xl text-4xl font-bold">{portfolioItem.title}</h1>
+                    {
+                        //Repo link
+                        portfolioItem.repoLink && (
+                            <a href={portfolioItem.repoLink} target="_blank" rel="noopener noreferrer" className="text=center font-bold p-4 bg-linkHover rounded-3xl hover:underline">
+                                View on GitHub
+                            </a>
+                        )
+                    }
                     {
                         portfolioItem.topLevelDescription.map(d => (
                             <p className="flex-1 p-4 bg-linkHover rounded-3xl whitespace-pre-wrap">{d}</p>

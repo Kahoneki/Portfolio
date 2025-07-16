@@ -21,56 +21,52 @@ function Home()
         {
             path: "Online Multiplayer PS5 Game.png",
             title: "Online Multiplayer PS5 Game",
-            link: "",
             description: "Cross-Platform action-rts game for Windows and the PS5 featuring online P2P LAN support, custom shaders, and realistic 3D physics"
         },
         {
             path: "Earth Renderer.jpg",
             title: "Dynamic Tesselation",
-            link: "",
             description: "GLSL tesselation shader with dynamic level-of-detail on large Earth topography and bathymetry dataset"
         },
         {
             path: "Limb 4 Limb.png",
             title: "Online Multiplayer Fighting Game",
-            link: "",
             description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents."
         },
         {
             path: "Ocean Wave Simulation.jpg",
             title: "Ocean Wave Simulation",
-            link: "",
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
+        },
+        {
+            path: "Depth of Field.jpg",
+            title: "Depth of Field",
+            description: "Multi-pass-rendering algorithm making use of 2D parallel prefix sums, ping-pong buffering, and summed area tables"
         },
         {
             path: "Boids.jpg",
             title: "Boids",
-            link: "",
             description: "Flocking simulation via Boids algorithm with GPGPU GLSL"
         },
         {
             path: "Grass Renderer.jpg",
             title: "Grass Renderer",
-            link: "",
             description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm"
         },
         {
             path: "Portal Renderer.jpg",
             title: "Portal Renderer",
-            link: "",
             description: "Implementation of an advanced stencil buffer rendering technique"
         },
         {
             path: "TotallyNotMinecraft.jpg",
             title: "Unity Voxel Engine",
-            link: "",
             description: "Procedurally generated multi-octave chunked voxel terrain with multithreading and face-occlusion"
         },
         {
             path: "Post Processing.jpg",
             title: "Post-Processing",
-            link: "",
-            description: "Off-screen deferred-rendering with MSAA anti-aliasing, saturation, fog, and vignetting"
+            description: "Off-screen multi-pass-rendering with MSAA anti-aliasing, saturation, fog, and vignetting"
         },
 
       ];
