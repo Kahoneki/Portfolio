@@ -11,13 +11,19 @@
   },
   "dependencies": {
     "@types/swiper": "^5.4.3",
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.27.0",
     "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/highlight.js": "^9.12.4",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@types/react-router-dom": "^5.3.3",

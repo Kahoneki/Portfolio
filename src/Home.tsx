@@ -81,13 +81,27 @@ return (
     <div className="flex flex-col">
         {/* Top */}
         <Navbar></Navbar>
-        <div className="py-16 bg-sidebar px-6 flex flex-col justify-center">
+        <div className="pt-10 bg-sidebar px-6 flex flex-col justify-center">
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pt-4 space-y-8 list-disc">
+        <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
             <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
         </ul>
+
+        {/* Contacts */}
+        <div className="flex justify-between items-center mt-4 mb-4">
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/in/ava-imray-1106a9237/" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline ml-5">
+                LinkedIn
+            </a>
+
+            {/* GitHub */}
+            <a href="https://github.com/Kahoneki" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline mr-10">
+                GitHub
+            </a>
+        </div>
+
         </div>
 
         {/* Swiper */}
@@ -133,11 +147,25 @@ return (
         {/* Sidebar */}
         <div className="h-screen w-1/4 bg-sidebar px-6 flex flex-col justify-center">
         <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pt-4 space-y-8 list-disc">
+        <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
             <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
             <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
             <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
         </ul>
+
+        {/* Contacts */}
+        <div className="flex justify-between items-center mt-8">
+            {/* LinkedIn */}
+            <a href="https://www.linkedin.com/in/ava-imray-1106a9237/" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline ml-5">
+                LinkedIn
+            </a>
+
+            {/* GitHub */}
+            <a href="https://github.com/Kahoneki" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline mr-10">
+                GitHub
+            </a>
+        </div>
+
         </div>
 
         {/* Main content */}

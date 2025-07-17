@@ -1,39 +1,35 @@
 import Navbar from "./Navbar"
+import { Link } from "react-router-dom"
+import { GetAllPosts } from "./utils/mdParser"
+import { Post } from "./types"
+
 
 function Blog()
 {
+    const posts: Post[] = GetAllPosts();
+    console.log(posts.length);
+
 return (
     <>
     <div className="flex flex-col h-screen">
         <Navbar></Navbar>
-        {/* <div className="flex flex-row w-screen h-full bg-green-500"> */}
+        <div className="max-w-4xl mx-auto py-8 px-4">
+            <h1 className="text-4xl font-bold mb-8 text-center">Blog (Under Development)</h1>
 
-            {/*Contents Left*/}
-            {/* <div className="w-1/6 bg-red-500"> */}
-                
-            {/* </div> */}
-            
-            {/*Main Page*/}
-            {/* <div className="w-full bg-blue-500"> */}
-                {/* <h1 className="font-extrabold text-4xl">Under Development</h1> */}
-            {/* </div> */}
-            
-            {/*Contents Right*/}
-            {/* <div className="w-1/6 bg-orange-500"> */}
-            
-            {/* </div> */}
-        {/* </div> */}
-
-        <div className="w-4/5 mx-auto h-64 my-auto relative -top-16 md:-top-24 lg:-top-32 text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold">Contact me here!</h1>
-            <div className="flex flex-row w-1/2 mx-auto justify-center gap-x-8 md:gap-x-16 lg:gap-x-48">
-                <a href="https://www.linkedin.com/in/ava-imray-1106a9237/">
-                    <img src="Images/linkedin icon.png" className="w-[8rem] pt-6"></img>
-                </a>
-                <a href="https://bsky.app/profile/kahoneki.bsky.social">
-                    <img src="Images/bluesky icon.png" className="w-[9rem] pt-6"></img>
-                </a>
+            <div className="flex flex-col gap-y-6 text-center">
+                {posts.map(post => (
+                    <Link
+                      key={post.slug}
+                      to={`/blog/${post.slug}`}
+                      className="block p-6 bg-contentSeparator rounded-lg hover:bg-sidebar"
+                    >
+                        <h2 className="text-2xl font-bold">{post.title}</h2>
+                        <p className="text-sm text-date mt-1 italic">{new Date(post.date).toLocaleDateString()}</p>
+                        <p className="mt-3">{post.excerpt}</p>
+                    </Link>
+                ))}
             </div>
+
         </div>
     </div>
     </>
