@@ -11,7 +11,7 @@ function Blog()
 
 return (
     <>
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col">
         <Navbar></Navbar>
         <div className="max-w-4xl mx-auto py-8 px-4">
             <h1 className="text-4xl font-bold mb-8 text-center">Blog (Under Development)</h1>
