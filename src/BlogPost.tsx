@@ -3,9 +3,13 @@ import ReactMarkdown from 'react-markdown'
 import Navbar from "./Navbar"
 import { GetPost } from "../src/utils/mdParser"
 import CodeBlock from "../src/CodeBlock"
+import remarkGfm from 'remark-gfm'
+import remarkSlug from 'remark-slug';
+import MarkdownLink from './MarkdownLink';
 
 function BlogPost()
 {
+
     const { slug } = useParams<{ slug: string }>();
 
     console.log('slug =', slug);
@@ -34,16 +38,16 @@ function BlogPost()
     return (
         <>
             <Navbar></Navbar>
-            <div className="max-w-4xl mx-auto pt-20 px-4">
-                <article className="prose prose-blog-theme lg:prose-xl max-w-none">
+            <div className="flex justify-center pt-20 px-4">
+                <article className="prose prose-blog-theme lg:prose-xl">
                     <div className="mb-8">
-                        <h1 className="!mb-4">{post!.title}</h1>
-                        <p className="!mt-4 text-sm text-date mb-8 italic">
+                        <h1 className="!mb-4 text-center">{post!.title}</h1>
+                        <p className="!mt-4 text-sm text-center text-date mb-8 italic">
                             Published on {new Date(post!.date).toLocaleDateString()}
                         </p>
                     </div>
                     {/* For every `<code>` element, render the `CodeBlock` component instead */}
-                    <ReactMarkdown components={{ code: CodeBlock }}>
+                    <ReactMarkdown components={{ code: CodeBlock, a: MarkdownLink }} remarkPlugins={[remarkGfm, remarkSlug as any]}>
                         {post!.content}
                     </ReactMarkdown>
                 </article>
