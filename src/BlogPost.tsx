@@ -38,7 +38,7 @@ function BlogPost()
     return (
         <>
             <Navbar></Navbar>
-            <div className="flex justify-center pt-20 px-4">
+            <div className="flex justify-center pt-20">
                 <article className="prose prose-blog-theme lg:prose-xl">
                     <div className="mb-8">
                         <h1 className="!mb-4 text-center">{post!.title}</h1>

@@ -37,7 +37,7 @@ export default {
             'code::after': {content: '""'},
 
             //Make content width larger
-            maxWidth: '60vw',
+            maxWidth: '80vw',
 
             //Wrap texts
             p: {

@@ -1,6 +1,6 @@
 ---
 title: "Kahoneki.com - Development Journey"
-date: "2025-07-17"
+date: "2025-07-19"
 excerpt: "Detailing the design decisions and implementation details for my portfolio website."
 ---
 
@@ -164,7 +164,7 @@ const element = React.createElement(
 ```
 But the alternative is generally seen as much cleaner and more intuitive:
 ```jsx
-const element = <div className="greeting">Hello, World!</div>;
+const element = <div className="hello-world">Hello, World!</div>;
 ```
 Also, just as there's TypeScript for type-strict JavaScript, there's also **TSX** for type-strict JSX.  
 It's perhaps also worth knowing that, just like how browsers don't run TypeScript, they also don't run JSX (and hence TSX), any JSX you provide will be compiled down into standard JavaScript - all of your JSX components will be converted into `React.createElement()` calls.
@@ -201,7 +201,7 @@ I think the best way to demonstrate Tailwind's utility would be to provide an ex
 
 This is all to say, I've given one of my Tailwind code blocks to Google's Gemini 2.5 Pro AI model and asked it to rewrite my design using traditional CSS classes. Apologies to those AI-averse, and apologies for any potential mistakes that I can't personally verify.
 
-Here's my HTML+Tailwind block for the main design of the Portfolio page (note: this doesn't include the items themselves which are handled with more complex Tailwind. This is essentially just the grid design). Pay attention to the `className` string, it's a collection of small single-purpose utility classes. In addition, prefixes like `sm:`, `md:`, and `lg:` are known as breakpoints and is how Tailwind handles responsive design.
+Here's my HTML+Tailwind block for the main design of the Portfolio page (note: this doesn't include the items themselves which are handled with more complex Tailwind. This is essentially just the grid design). Pay attention to the `className` string, it's a collection of small single-purpose utility classes. In addition, prefixes like `sm:`, `md:`, and `lg:` are known as breakpoints and are how Tailwind handles responsive design.
 ```tsx
 <>
 <Navbar></Navbar>
@@ -222,7 +222,7 @@ Here is what I was given as the traditional-CSS alternative:
 ```html
 <!-- HTML -->
 <>
-<div class="navbar"></div>
+<Navbar></Navbar>
 <div class="container">
     <h1 class="main-heading">Click to learn more!</h1>
     <div class="grid-container">
@@ -335,7 +335,7 @@ return (
 }
 ```
 There are a few key elements in here so let's break it down one at a time.
-`<HashRouter>` is the main "engine". The entire site is wrapped in this and it uses the URL hash (#) to manage the client-side route, keeping the UI in sync with the URL. There are two main options for your routing engine - `<HashRouter>` and `<BrowserRouter>`. The difference will be covered in more detail in the [Github Pages/Actions](#github-pages-actions) section wherein we discuss static hosting.
+`<HashRouter>` is the main "engine". The entire site is wrapped in this and it uses the URL hash (#) to manage the client-side route, keeping the UI in sync with the URL. There are two main options for your routing engine - `<HashRouter>` and `<BrowserRouter>`. The difference is that static hosting natively supports `<HashRouter>`, whereas to get `<BrowserRouter>` working, it would need some extra server-side configuration. GitHub Pages does not provide easy support for this configuration.
 
 `<Link>` is the React Router replacement for the standard `<a>` tag that is to be used for *internal navigation* (navigation within the website, as opposed to between websites). When the user clicks, for example, `<Link to="/about">`, a few things happen:
 1) React Router calls a special function, `event.preventDefault()`, stopping the browser from carrying out its default behaviour (which is to do a full page reload)
@@ -363,11 +363,11 @@ Probably the least known item I'm discussing, Gray Matter was very helpful for t
 Gray Matter is a **Markdown Parser** which I'm using for my blog pages. Each page is stored as a Markdown (`.md`) file and is split into two sections:
 1) **Front Matter:** Metadata about the file written at the top in YAML (a serialisation language)
 2) **Content:** The actual content itself, written in Markdown.  
-Here's an example, it's the very blog page you're looking at it right now!
+Here's an example, it's the very blog page you're looking at right now!
 ```
 ---
 title: "Kahoneki.com - Development Journey"
-date: "2025-07-17"
+date: "2025-07-19"
 excerpt: "Detailing the design decisions and implementation details for my portfolio website."
 ---
 [CONTENT GOES HERE]
@@ -415,7 +415,7 @@ for (const path in modules)
 
 #### Vite
 So I've mentioned a few times up to this point that browsers don't support some of the things we've been using for development. They don't support TypeScript, and they don't support JSX/TSX.  
-On a seemingly unrelated note, up until now we've just been working with .tsx files, yet we know that browsers operate only on .html, .css, and .js files. Where do these files come from?
+On a seemingly unrelated note, up until now we've just been working with .tsx files, yet we know that browsers operate only on .html, .css, and .js files. Where do these files come from?  
 On a seemingly even more unrelated note, is it not a big hassle having to rebuild our entire website everytime we want to view our changes? Somebody should make a tool that can automatically and efficiently rebuild your project whenever you modify a file.
 
 Vite is a **build tool** for web applications. That is, very purposefully, incredibly vague, but that's because it does all of the following:
@@ -435,16 +435,18 @@ Now, we could set up our computer to serve as a **server**, opening it up to any
 - Everything is currently local, we would need to set up a framework to be able to send our files to those that request it - we can't just send someone a local file path like `C:/Users/Ava/Portfolio/dist/index.html`. That sounds like a lot of effort.
 - Our computer isn't always turned on, but it would need to be if we wanted access to our website to be available 24/7.
 - Hosting a web server can demand handling a lot of incoming and outgoing traffic, something which our computer isn't set up to handle.
-- The website's speed can vary depending on where someone is connecting from because we only have computer as opposed to a network of interconnected servers all across the world (otherwise known as a Content Delivery Network or CDN).  
+- The website's speed can vary depending on where someone is connecting from because we only have one computer as opposed to a network of interconnected servers all across the world (otherwise known as a Content Delivery Network or CDN).
+  
 The solution to these problems is to use a **hosting provider.** We can upload our `dist` folder to them and they can use their super big and expensive servers that are set up all over the globe and are specially made to handle web traffic. The hosting provider can give us a public URL (e.g. kahoneki.github.io), and when someone types the URL into their browser, the hosting provider will serve them our files.  
-The hosting provider I went with was Github Pages, simply because it has nice integration with GitHub actions and... it's free. They also allow you to use your own domain if you own one so that it can be the entry point to their server (in my case: kahoneki.com).
+The hosting provider I went with was Github Pages, simply because it has nice integration with GitHub Actions and... it's free. They also allow you to use your own domain if you own one so that it can be the entry point to their server (in my case: kahoneki.com).
 
 Now that we have a server we can provide our files to for hosting, how do we actually get our code from being just a bunch of source files into the `dist` folder, then provide that dist folder to the hosting provider? This process is known as **deployment**, and it generally looks like this:
 1) **Get the latest code:** E.g.: from the `master` branch on GitHub
 2) **Install dependencies:** Run `npm install` to get all the necessary libraries (React, Tailwind, Gray Matter, etc.)
 3) **Build the Site:** Run `npm run build`, causing Vite to take all your source files and convert them into pure HTML, CSS, and JS, placing them inside the `dist` folder.
 4) **Transfer the Built Files:** Send the `dist` folder contents to the hosting provider, replacing the old files.
-Phew, that's like, what, 4 steps? And it would be just slightly annoying having to do that more than once, so let's do what programmers know best and spend a bunch of time learning an entirely new framework to write an automation script that can do this for us. This is where CI/CD (or **"Continuous Integration / Continuous Deployment**) comes in, and while I like to poke fun, it's actually an incredibly powerful tool that can do a lot more than what we'll be using it for here.  
+
+Phew, that's like, what, 4 steps? And it would be just slightly annoying having to do that more than once, so let's do what programmers know best and spend a bunch of time learning an entirely new framework to write an automation script that can do this for us. This is where CI/CD (or **"Continuous Integration / Continuous Deployment"**) comes in, and while I like to poke fun, it's actually an incredibly powerful tool that can do a lot more than what we'll be using it for here.  
 **GitHub Actions** is a CI/CD platform that's built into GitHub (which is useful because I'm using git for source control). It lets you define a set of automated steps (aka a **"workflow"**) that will run automatically whenever something specific happens in your repository (e.g.: pushing to `master`).  
 It's contained within a `.yml` file, here's mine:
 ```yml
@@ -521,13 +523,13 @@ Everytime GitHub detects a push to master, it will start up a virtual machine to
 
 ### Part 3: Summary
 Phew, you've made it to the end, well done! I hope it proved somewhat useful and that you've maybe learnt a thing or two. This website has been the culmination of about 7 months working on and off in between my graphics projects and I've thoroughly enjoyed it. I was personally very surprised to find out just how fun web development can often be.  
-Although at the start of development, I had a very pragmatic mindset of just wanting to get stuff working (and quickly), I can't help but feel like I've just scratched the surface of a deep rabbit hole that has consistently kept me intrigued and continue to hold my interest for potential future projects.  
+Although at the start of development, I had a very pragmatic mindset of just wanting to get stuff working (and quickly), I can't help but feel like I've just scratched the surface of a deep rabbit hole that has consistently kept me intrigued and continued to hold my interest for potential future projects.  
 Maybe, just maybe, web development isn't so bad after all.
 
 
 
 ### Acknowledgements
-Throughout the entirety of this project, I've received constant support and help from a friend and fella by the name of Jowsey. In fact, this section might as well be titled 'References' with how much I referred to him for help, a monumental accomplishment given how unknowledgeable I was at the start of this. He receives my undying gratitude for helping me get this site to what it is and never getting fed up with my constant questioning. All the libraries I've mentioned in this blog post have been a result of his recommendation and are the reason I was able to do this at all.
+Throughout the entirety of this project, I've received constant support and help from a friend and fella by the name of Jowsey. In fact, this section might as well be titled 'References' with how much I referred to him for help, a monumental accomplishment given how unknowledgeable I was at the start of this. He receives my undying gratitude for helping me get this site to what it is and never getting fed up with my constant questioning. Pretty much all the libraries I've mentioned in this blog post have been a result of his recommendation and are the reason I was able to do this at all.
 
 He's an incredibly experienced web developer and games programmer, check him out [here](https://tom.cafe/) !! NOW !!
 
