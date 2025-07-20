@@ -1,6 +1,9 @@
 # Kahoneki Portfolio
 A place to house all of my projects and blog posts.
+
 I cover the entire process of designing and developing the website [here!](https://kahoneki.com/#/blog/Kahoneki.com%20-%20Development%20Journey)
+
+<br>
 
 ## Technical Summary
 - TypeScript for type safety
