@@ -23,6 +23,7 @@ Now that it's complete, I hope to walk through the process of making my portfoli
 
 ## Technical Summary
 The tl;dr for those that are simply curious:
+- [Source Code (GitHub)](https://github.com/Kahoneki/Portfolio)
 - TypeScript for type safety
 - React for the component paradigm
 - Tailwind CSS for template classes
