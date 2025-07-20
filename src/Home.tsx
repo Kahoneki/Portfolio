@@ -72,140 +72,72 @@ function Home()
       ];
 
 
-// Check for aspect ratio - if vertical display, render differently
-// console.log(screen.availWidth / screen.availHeight)
-if (screen.availWidth / screen.availHeight < 1.25 || screen.availWidth < 600 || screen.availHeight < 600) {
-// Vertical
-return (
-    <>  
-    <div className="flex flex-col">
-        {/* Top */}
-        <Navbar></Navbar>
-        <div className="pt-10 bg-sidebar px-6 flex flex-col justify-center">
-        <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
-            <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
-            <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
-            <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
-        </ul>
+        return (
+        <>
+            {/* Main container. Column by default (for mobile). Row for large screens (lg:). */}
+            <div className="flex flex-col lg:flex-row">
 
-        {/* Contacts */}
-        <div className="flex justify-between items-center mt-4 mb-4">
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/ava-imray-1106a9237/" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline ml-5">
-                LinkedIn
-            </a>
+                {/* Sidebar/top info section. By default, it's just a block with padding. On large screens (lg:), it becomes a fixed-width, full-height sidebar. */}
+                <div className="w-full bg-sidebar px-6 pt-10 flex flex-col justify-center lg:h-screen lg:w-1/4 lg:p-6">
+                    <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg" alt="A photo of Ava Imray"></img>
+                    <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
+                        <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
+                        <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
+                        <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
+                    </ul>
 
-            {/* GitHub */}
-            <a href="https://github.com/Kahoneki" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline mr-10">
-                GitHub
-            </a>
-        </div>
+                    {/* Socials */}
+                    <div className="flex justify-between items-center my-4 lg:my-8">
+                        <a href="https://www.linkedin.com/in/ava-imray-1106a9237/" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline ml-5">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/Kahoneki" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline mr-10">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
 
-        </div>
-
-        {/* Swiper */}
-        <div className="text-black pt-8 px-8 mb-4 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px]">
-        <Swiper className="h-full"
-        modules={[Autoplay, Pagination]}
-        autoplay={{
-            delay: 6000, // Set delay in ms
-            disableOnInteraction: false, // Continues autoplay after user interaction
-            }}
-        pagination
-        spaceBetween={50}
-        slidesPerView={1}
-        centeredSlides={true}
-        loop={true}
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
-        >
-        
-        {
-            carousel.map(c => (
-                <SwiperSlide>
-                    <Link to={"/portfolio/" + c.title}>
-                        <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
-                        <p className="mt-4 text-center text-text font-bold">{c.title}</p>
-                        <p className="text-center text-text mb-6">{c.description}</p>
-                    </Link>
-                </SwiperSlide>
-            ))
-        }
-        </Swiper>
-        </div>
-    </div>
-    </>
-)
-}
-else {
-//Horizontal
-return (
-    <>
-    <div className="flex flex-row">
-        
-        {/* Sidebar */}
-        <div className="h-screen w-1/4 bg-sidebar px-6 flex flex-col justify-center">
-        <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg"></img>
-        <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
-            <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
-            <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
-            <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
-        </ul>
-
-        {/* Contacts */}
-        <div className="flex justify-between items-center mt-8">
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/ava-imray-1106a9237/" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline ml-5">
-                LinkedIn
-            </a>
-
-            {/* GitHub */}
-            <a href="https://github.com/Kahoneki" target="_blank" rel="noopener noreferrer" className="font-bold text-xl hover:underline mr-10">
-                GitHub
-            </a>
-        </div>
-
-        </div>
-
-        {/* Main content */}
-        <div className="flex flex-col flex-1 w-3/4">
-            <Navbar></Navbar>
-            <div className="text-black pt-8 px-8 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px] border-l-[8px]">
-            <Swiper className="h-full"
-            modules={[Autoplay, Navigation, Pagination]}
-            autoplay={{
-                delay: 6000, // Set delay in ms
-                disableOnInteraction: false, // Continues autoplay after user interaction
-                }}
-            navigation
-            pagination
-            spaceBetween={50}
-            slidesPerView={1.25}
-            centeredSlides={true}
-            loop={true}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            >
-            
-            {
-                carousel.map(c => (
-                    <SwiperSlide>
-                        <Link to={"/portfolio/" + c.title}>
-                            <img className="object-cover h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path}></img>
-                            <p className="mt-4 text-center text-text font-bold">{c.title}</p>
-                            <p className="text-center text-text">{c.description}</p>
-                        </Link>
-                    </SwiperSlide>
-                ))
-            }
-            </Swiper>
+                {/* Navbar and carousel */}
+                <div className="flex flex-col flex-1 w-full lg:w-3/4">
+                    <Navbar />
+                    {/* Carousel section */}
+                    <div className="text-black pt-8 px-8 w-full flex-1 bg-background border-solid border-contentSeparator border-t-[8px] lg:border-l-[8px]">
+                        <Swiper className="h-full"
+                            modules={[Autoplay, Navigation, Pagination]}
+                            autoplay={{
+                                delay: 6000,
+                                disableOnInteraction: false,
+                            }}
+                            navigation
+                            pagination
+                            spaceBetween={50}
+                            slidesPerView={1} //Mobile default
+                            breakpoints={{
+                                //On screens 1024px and up, show 1.25 slides
+                                1024: {
+                                    slidesPerView: 1.25,
+                                }
+                            }}
+                            centeredSlides={true}
+                            loop={true}
+                        >
+                            {
+                                carousel.map(c => (
+                                    <SwiperSlide key={c.title}>
+                                        <Link to={"/portfolio/" + c.title}>
+                                            <img className="object-cover h-[50vh] lg:h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path} alt={c.title}></img>
+                                            <p className="mt-4 text-center text-text font-bold">{c.title}</p>
+                                            <p className="text-center text-text mb-6">{c.description}</p>
+                                        </Link>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    </>
-)
-}
+        </>
+    )
 
 }
 

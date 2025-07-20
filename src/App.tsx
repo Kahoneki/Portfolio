@@ -21,32 +21,6 @@ function ScrollToTopOnSiteChange() {
 }
 
 
-let oldAspectRatio = window.innerWidth / window.innerHeight
-function OnWindowResize() {
-  console.log(oldAspectRatio)
-  useEffect(() => {
-    const handleResize = () => {
-      const aspectRatio = window.innerWidth / window.innerHeight
-      if ((aspectRatio > 1.25 && oldAspectRatio < 1.25) || (aspectRatio < 1.25 && oldAspectRatio > 1.25)) {
-        // Refresh the page if the aspect ratio has flipped past 1.25
-        window.location.reload();
-      }
-      oldAspectRatio = aspectRatio
-    };
-
-    // Add the resize event listener
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  return null;
-}
-
-
 function App() {
   
 return (
@@ -59,7 +33,6 @@ return (
     <div>
 
       <ScrollToTopOnSiteChange></ScrollToTopOnSiteChange>
-      <OnWindowResize></OnWindowResize>
 
       {/* HashRouter element will be replaced with Route element for appropriate path lookup
       (e.g.: if url path="/", it will be replaced with Home element) */}
