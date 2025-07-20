@@ -1,5 +1,6 @@
 # Kahoneki Portfolio
-A place to house all of my projects and blog posts
+A place to house all of my projects and blog posts.
+I cover the entire process of designing and developing the website [here!](https://kahoneki.com/#/blog/Kahoneki.com%20-%20Development%20Journey)
 
 ## Technical Summary
 - TypeScript for type safety
@@ -10,5 +11,3 @@ A place to house all of my projects and blog posts
 - Vite for bundling
 - GitHub Actions for deployment
 - GitHub Pages for hosting
-
-I cover the entire process of designing and developing this website [here!](https://kahoneki.com/#/blog/Kahoneki.com%20-%20Development%20Journey)
