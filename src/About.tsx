@@ -21,10 +21,10 @@ return (
                         <h1 className="text-2xl lg:text-8xl font-bold inline">Hey, I'm Ava!</h1>
                         <img src="Images/favicon.png" className="w-6 lg:w-32 inline relative -top-2 -right-2 lg:-top-10 lg:-right-4"></img>
                         <p className="text-lg lg:text-3xl mt-3 lg:mt-0 lg:ml-2 relative -top-4">A Graphics Programmer from Dundee.</p>
-                        <p className="hidden lg:block text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the immense power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
+                        <p className="hidden lg:block text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
                     </div>
                 </div>
-                <p className="block lg:hidden mt-8 lg:mt-0 text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the immense power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
+                <p className="block lg:hidden mt-8 lg:mt-0 text-md ml-2 relative -top-2">Passionate about pushing the limits of technology through high-performance computing. I predominantly focus on leveraging the power of the GPU to solve complex problems in real-time graphics and simulation, always aiming to deepen my understanding and expand my skills in the vast and ever-expanding field.</p>
             </div>
             {/* End of intro strip */}
 
@@ -40,6 +40,7 @@ return (
                 <div className="text-lg pt-2">
                     <p>My portfolio features a mix of projects that showcase my journey in high-performance computing. It mostly consists of graphics projects, for which a few of my personal favourites include:</p>
                     <ul className="list-disc pl-8 text-base">
+                        <li><span className="font-bold">Vulkan/DX12 RHI Game Engine: </span>An API-agnostic render backend for my game engine 'Neki' featuring dynamic rendering and out-of-core data streaming</li>
                         <li><span className="font-bold">Highly-Optimised Portal Renderer: </span>Utilises an advanced stencil buffer rendering technique for improved performance over traditional portal-rendering methods.</li>
                         <li><span className="font-bold">Depth-of-Field Shader Effect: </span>Implements dynamic focal distance and depth, using parallel prefix sums to generate summed area tables for a box blur.</li>
                         <li><span className="font-bold">Grass Renderer: </span>Explores hardware limitations of CPU-GPU communication and demonstrates the power of GPU instancing to address these challenges.</li>
@@ -49,8 +50,9 @@ return (
 
                     <p>While graphics is my main focus, I've also explored in a few other areas of high-performance computing, namely:</p>
                     <ul className="list-disc pl-8 text-base">
-                        <li><span className="font-bold">Voxel Engine in Unity: </span>Covers the fundamentals of multithreading, chunking, multi-octave noise, procedural generation, and texture atlasing.</li>
                         <li><span className="font-bold">Real-Time Online Fighting Game (1st Year Project): </span>Features a robust client-server architecture using a combined TCP/UDP protocol, featuring an account system with an SQLite backend; this is now being used as an exemplary project for future students taking this module.</li>
+                        <li><span className="font-bold">Online Multiplayer PS5 Game: </span>Interfacing directly with PS5 hardware to create a realtime online action-rts game with a multi-pass render pipeline</li>
+                        <li><span className="font-bold">Voxel Engine in Unity: </span>Covers the fundamentals of multithreading, chunking, multi-octave noise, procedural generation, and texture atlasing.</li>
                     </ul>
 
                     <br></br>
@@ -71,50 +73,47 @@ return (
                 
                 <div className="pt-4">
                     <h3 className="text-2xl font-bold">Graphics</h3>
-                    <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
+                    <ul className="text-lg columns-1 md:columns-2 lg:columns-3 list-none">
+                        <li>Vulkan</li>
+                        <li>DirectX 12</li>
                         <li>OpenGL</li>
                         <li>Nvidia Nsight</li>
                         <li>RenderDoc</li>
+                        <li>Data Streaming</li>
                         <li>GPGPU</li>
-                        <li>Procedural Generation</li>
-                        <li>Raytracing</li>
                         <li>Culling Techniques</li>
                         <li>Dynamic Tesselation</li>
-                        <li>Blinn Phong Lighting</li>
-                        <li>Compute Shaders</li>
+                        <li>PBR Lighting</li>
+                        <li>Procedural Generation</li>
                         <li>GPU Instancing</li>
                         <li>Stencil Buffer Rendering</li>
-                        <li>Deferred Rendering</li>
                         <li>Post-Processing</li>
                     </ul>
                 </div>
 
                 <div className="pt-6">
                     <h3 className="text-2xl font-bold">Miscellaneous</h3>
-                    <ul className="text-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
+                    <ul className="text-lg columns-1 md:columns-2 lg:columns-3 list-none">
                         <li>Git/GitHub</li>
+                        <li>Unity</li>
+                        <li>Mathematics</li>
+                        <li>Physics</li>
                         <li>Network Programming</li>
-                        <li>SQLite</li>
                         <li>Oracle Web Computing</li>
                         <li>Secure Shell (SSH)</li>
                         <li>Linux Servers</li>
-                        <li>Mathematics</li>
-                        <li>Physics</li>
+                        <li>SQLite</li>
                         <li>Multithreading</li>
-                        <li>Unity</li>
                         <li>SFML</li>
                         <li>Tailwind</li>
                         <li>React.js</li>
                         <li>Vite</li>
-                        <li>OpenCV</li>
-                        <li>Assimp</li>
-                        <li>GLFW</li>
                     </ul>
                 </div>
 
                 <div className="pt-6">
                     <h3 className="text-2xl font-bold">Languages</h3>
-                    <ul className="text-lg grid grid-cols-1 list-none">
+                    <ul className="text-lg columns-1 list-none">
                         <li>C++</li>
                         <li>C#</li>
                         <li>HTML/CSS/JavaScript</li>
@@ -160,8 +159,9 @@ return (
                         <li>
                             <h4 className="font-bold underline">2nd Year:</h4>
                             <div className="pl-2">
-                                <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty. </p>
+                                <p><span className="font-semibold">Alexander D G Kydd Prize Winner: </span>Awarded for being the best overall student in 2nd year of the Faculty of Design, Informatics, and Business</p>
                                 <p><span className="font-semibold">Internal Events Manager (Abertay Game Development Society): </span>Organised events to foster collaboration and knowledge between disciplines (more information further down).</p>
+                                <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
                                 <h5 className="font-semibold">Grades:</h5>
                                 <ul className="list-disc pl-6">
                                     <li>CMP203 (Graphics Programming) - A+</li>
@@ -172,6 +172,23 @@ return (
                                 </ul>
                             </div>
                         </li>
+
+                        <br></br>
+
+                        <li>
+                            <h4 className="font-bold underline">3rd Year:</h4>
+                            <div className="pl-2">
+                                <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
+                                <h5 className="font-semibold">Grades:</h5>
+                                <ul className="list-disc pl-6">
+                                    <li>CMP301 (Graphics Programming with Shaders) - Grade Pending</li>
+                                    <li>CMP304 (Artificial Intelligence) - Grade Pending</li>
+                                    <li>CMP316 (Game Engine Development) - Grade Pending</li>
+                                    <li>DES315 (Professional Project) - Grade Pending</li>
+                                </ul>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
                 {/* End of university */}
@@ -213,7 +230,7 @@ return (
                     <h3 className="text-2xl font-bold">Software Engineer Intern, TechnipFMC</h3>
                     <p className="text-lg italic">June 2022 - July 2022</p>
                     <ul className="list-disc pl-6">
-                        <li>Underwent a 4-week-long internship focused on automating the manual process of graph cropping through the development of Computer Vision applications in Python, utilising libraries such as NumPy, OpenCV,and Pillow.</li>
+                        <li>Underwent a 4-week-long internship focused on automating the manual process of graph cropping through the development of computer vision applications in Python, utilising libraries such as NumPy, OpenCV, and Pillow.</li>
                         <li>Successfully transitioned the graph cropping process from manual to automated, significantly improving efficiency and accuracy.</li>
                         <li>Gathered requirements by directly consulting with the engineering department to ensure the software met their needs and aligned with the functionality of a larger software package.</li>
                         <li>This experience enhanced my technical and problem solving skills while also boosting my confidence and teamworking abilities in a professional environment.</li>
@@ -250,11 +267,11 @@ return (
                         <p>Elected by my peers to lead this position, it was my proud responsibility to take feedback from our members and turn it into awesome and engaging events for a wide and inclusive array of disciplines. I prioritised representation and transparency, ensuring all members felt heard and involved. This role also involved maintaining a good working relationship with companies in the games industry and faculty staff at the University</p>
                         <p>Notable large events I've organised:</p>
                         <ul className="list-disc pl-6">
+                            <li>Git/Github Source Control Lecture</li>
                             <li>Freshers Game Jam 2024</li>
                             <li>Halloween Game Jam 2024</li>
                             <li>Art Jam 2025</li>
                             <li>Spring Game Jam 2025</li>
-                            <li>Git/Github Source Control Lecture</li>
                         </ul>
                     </div>
                 </div>

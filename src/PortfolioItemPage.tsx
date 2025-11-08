@@ -6,9 +6,22 @@ function PortfolioItemPage()
     const { projectName } = useParams<{ projectName: string }>()
 
     const itemPageInfo = [
+        //Vulkan+DX12 Game Engine (Neki)
+        {
+            title:"Vulkan + DX12 Game Engine (Neki)",
+            repoLink: "https://github.com/Kahoneki/Neki",
+            topLevelImgPath: "Neki.png",
+            topLevelDescription: [
+                "Neki is a cross-platform game engine built for Windows and Linux.\n\nFeatures include:\n- RHI abstraction layer implementing generic interfaces over Vulkan and DirectX 12\n- Dynamic bindless rendering\n- Custom render graph implementation\n- Out-of-core rendering for dynamic data streaming to/from disk\n- Bindless shader resources\n- PBR+IBL lighting model\n- MSAA and SSAA\n- Custom ECS system\n- Custom event system\n- Server-authoritative networking with client-side prediction\n- CMake integration",
+            ],
+            //imgPath automatically prefixed with title attribute from above as folder name
+            describedImages: [
+            ],
+        },
+
         //OpenGL Render Engine
         {
-            title:"OpenGL Render Engine (Neki)",
+            title:"OpenGL Render Engine (NekiGL)",
             repoLink: "https://github.com/Kahoneki/OpenGL-Render-Engine",
             topLevelImgPath: "OpenGL Render Engine.png",
             topLevelDescription: [

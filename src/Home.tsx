@@ -14,14 +14,19 @@ function Home()
 
     const carousel = [
         {
-            path: "OpenGL Render Engine.png",
-            title: "OpenGL Render Engine (Neki)",
-            description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM"
+            path: "Neki.png",
+            title: "High Performance Vulkan + DX12 Game Engine (Neki)",
+            description: "Game engine built on top of a Vulkan/DX12 RHI layer with online support and out-of-core rendering (Windows/Linux)"
         },
         {
             path: "Online Multiplayer PS5 Game.png",
             title: "Online Multiplayer PS5 Game",
             description: "Cross-Platform action-rts game for Windows and the PS5 featuring online P2P LAN support, custom shaders, and realistic 3D physics"
+        },
+        {
+            path: "OpenGL Render Engine.png",
+            title: "OpenGL Render Engine (NekiGL)",
+            description: "Render Engine built from the ground up in OpenGL using GLFW/GLAD and GLM"
         },
         {
             path: "Earth Renderer.jpg",
@@ -82,7 +87,7 @@ function Home()
                     <img className="rounded-full aspect-square w-2/3 mx-auto border-solid border-background border-4 shadow-[0px_0px_15px_10px] shadow-background" src="Images/me.jpg" alt="A photo of Ava Imray"></img>
                     <ul className="mt-8 font-medium pl-4 pt-4 space-y-8 list-disc">
                         <li>Graphics Programmer specialising in GPGPU and high-performance compute applications</li>
-                        <li>2nd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
+                        <li>3rd year student studying BSc (Hons) Computer Games Technology @ Abertay University</li>
                         <li>Passionate about leveraging GPU capabilities beyond traditional rendering for computational challenges.</li>
                     </ul>
 
@@ -107,6 +112,7 @@ function Home()
                             autoplay={{
                                 delay: 6000,
                                 disableOnInteraction: false,
+                                pauseOnMouseEnter: true,
                             }}
                             navigation
                             pagination
@@ -125,7 +131,7 @@ function Home()
                                 carousel.map(c => (
                                     <SwiperSlide key={c.title}>
                                         <Link to={"/portfolio/" + c.title}>
-                                            <img className="object-cover h-[50vh] lg:h-5/6 w-full rounded-xl" src={"Images/Thumbnails/" + c.path} alt={c.title}></img>
+                                            <img className="object-cover h-[50vh] lg:h-5/6 w-full rounded-xl bg-sidebar" src={"Images/Thumbnails/" + c.path} alt={c.title}></img>
                                             <p className="mt-4 text-center text-text font-bold">{c.title}</p>
                                             <p className="text-center text-text mb-6">{c.description}</p>
                                         </Link>
