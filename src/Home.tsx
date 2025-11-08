@@ -15,8 +15,8 @@ function Home()
     const carousel = [
         {
             path: "Neki.png",
-            title: "High Performance Vulkan + DX12 Game Engine (Neki)",
-            description: "Game engine built on top of a Vulkan/DX12 RHI layer with online support and out-of-core rendering (Windows/Linux)"
+            title: "Vulkan + DX12 Game Engine (Neki)",
+            description: "High Performance game engine built on top of a Vulkan/DX12 RHI layer with online support and out-of-core rendering (Windows/Linux)"
         },
         {
             path: "Online Multiplayer PS5 Game.png",
