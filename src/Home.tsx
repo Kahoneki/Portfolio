@@ -39,6 +39,11 @@ function Home()
             description: "C++/SFML real-time online fighting game featuring client-server networking architecture, SQL-backed account system, and Al-driven opponents."
         },
         {
+            path: "Portal Renderer.jpg",
+            title: "Portal Renderer",
+            description: "Implementation of an advanced stencil buffer rendering technique"
+        },
+        {
             path: "Ocean Wave Simulation.jpg",
             title: "Ocean Wave Simulation",
             description: "Sum of sines height displacement + Lambertian diffuse & blinn phong specular lighting model + Skybox for reflections"
@@ -57,11 +62,6 @@ function Home()
             path: "Grass Renderer.jpg",
             title: "Grass Renderer",
             description: "Demonstration of instanced draw calls, noise heightmap lookup, and dynamic stripified plane generation algorithm"
-        },
-        {
-            path: "Portal Renderer.jpg",
-            title: "Portal Renderer",
-            description: "Implementation of an advanced stencil buffer rendering technique"
         },
         {
             path: "TotallyNotMinecraft.jpg",
