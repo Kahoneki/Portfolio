@@ -322,7 +322,7 @@ function PortfolioItemPage()
         //Portal Renderer
         {
             title:"Portal Renderer",
-            repoLink: "https://github.com/Kahoneki/OpenGL/tree/main/Portals",
+            repoLink: "https://github.com/Kahoneki/OpenGL-Render-Engine/blob/main/Source%20Files/World/Drawable/Special/Portal.cpp",
             youtubeLink: "https://www.youtube.com/watch?v=KOPil_RIRA4",
             topLevelImgPath: "Portal Renderer.jpg",
             topLevelDescription: [
