@@ -16,7 +16,7 @@ return (
             {/* Intro strip */}
             <div>
                 <div className="flex flex-row">
-                    <img src="Images/me full edited.PNG" className="rounded-full mr-2 lg:mx-4 w-1/3 lg:w-1/2 mt-8 my-auto border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar"></img>
+                    <img src="Images/me full edited.png" className="rounded-full mr-2 lg:mx-4 w-1/3 lg:w-1/2 mt-8 my-auto border-solid border-sidebar border-4 shadow-[0px_0px_15px_10px] shadow-sidebar"></img>
                     <div className="mt-16 lg:mt-48 ml-2">
                         <h1 className="text-2xl lg:text-8xl font-bold inline">Hey, I'm Ava!</h1>
                         <img src="Images/favicon.png" className="w-6 lg:w-32 inline relative -top-2 -right-2 lg:-top-10 lg:-right-4"></img>
