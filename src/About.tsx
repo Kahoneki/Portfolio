@@ -160,6 +160,7 @@ return (
                             <h4 className="font-bold underline">2nd Year:</h4>
                             <div className="pl-2">
                                 <p><span className="font-semibold">Alexander D G Kydd Prize Winner: </span>Awarded for being the best overall student in 2nd year of the Faculty of Design, Informatics, and Business</p>
+                                <p><span className="font-semibold">A D D McKay Senior Prize Winner: </span>Awarded for achieving a high level of performance in Mathematics for 2nd year of the BSc (Hons) Computer Games Technology course</p>
                                 <p><span className="font-semibold">Internal Events Manager (Abertay Game Development Society): </span>Organised events to foster collaboration and knowledge between disciplines (more information further down).</p>
                                 <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
                                 <h5 className="font-semibold">Grades:</h5>
