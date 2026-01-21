@@ -12,7 +12,7 @@ function PortfolioItemPage()
             repoLink: "https://github.com/Kahoneki/Neki",
             topLevelImgPath: "Neki.png",
             topLevelDescription: [
-                "Neki is a cross-platform game engine built for Windows and Linux.\n\nFeatures include:\n- RHI abstraction layer implementing generic interfaces over Vulkan and DirectX 12\n- Dynamic bindless rendering\n- Custom render graph implementation\n- Out-of-core rendering for dynamic data streaming to/from disk\n- Bindless shader resources\n- PBR+IBL lighting model\n- MSAA and SSAA\n- Custom ECS system\n- Custom event system\n- Server-authoritative networking with client-side prediction\n- CMake integration",
+                "Neki is a cross-platform game engine built for Windows and Linux.\n\nFeatures include:\n- RHI abstraction layer implementing generic interfaces over Vulkan and DirectX 12\n- Dynamic bindless rendering\n- Custom render graph implementation\n- Out-of-core rendering for dynamic data streaming to/from disk\n- Bindless shader resources\n- PBR+IBL lighting model\n- HDR with ACES tonemapping\n- Shadow-casting directional, point, and spot lights\n- Depth of field (SAT prefix sum)\n- MSAA and SSAA\n- Custom ECS system\n- Custom event system\n- Server-authoritative networking with client-side prediction\n- Jolt Physics\n- ImGui + ImGuizmo based editor\n- Scene serialisation (save + load)\n- CMake integration",
             ],
             //imgPath automatically prefixed with title attribute from above as folder name
             describedImages: [

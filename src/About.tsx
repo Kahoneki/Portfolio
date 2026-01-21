@@ -139,22 +139,22 @@ return (
                     <p className="text-lg font-bold">GPA: 4.4 / 4.5</p>
                     <ul className="list-none">
                         
+
+                        <br></br>
+
                         <li>
-                            <h4 className="font-bold underline">1st Year:</h4>
+                            <h4 className="font-bold underline">3rd Year:</h4>
                             <div className="pl-2">
-                                <p><span className="font-semibold">Class Representative: </span>Nominated to bring forth student feedback and advocate for curriculum improvements.</p>
+                                <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
                                 <h5 className="font-semibold">Grades:</h5>
                                 <ul className="list-disc pl-6">
-                                    <li>MAT101 (Applied Mathematics 1) - A+</li>
-                                    <li>CMP102 (Software Design) - A+</li>
-                                    <li>CMP101 (Computer Hardware, Architecture, and Operating Systems) - A</li>
-                                    <li>CMP104 (Programming With C++) - A</li>
-                                    <li>CMP105 (Games Programming with C++) - A</li>
+                                    <li>CMP301 (Graphics Programming with Shaders) - Grade Pending</li>
+                                    <li>CMP304 (Artificial Intelligence) - A+</li>
+                                    <li>CMP316 (Game Engine Development) - Grade Pending</li>
+                                    <li>DES315 (Professional Project) - Grade Pending</li>
                                 </ul>
                             </div>
                         </li>
-
-                        <br></br>
 
                         <li>
                             <h4 className="font-bold underline">2nd Year:</h4>
@@ -177,15 +177,16 @@ return (
                         <br></br>
 
                         <li>
-                            <h4 className="font-bold underline">3rd Year:</h4>
+                            <h4 className="font-bold underline">1st Year:</h4>
                             <div className="pl-2">
-                                <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
+                                <p><span className="font-semibold">Class Representative: </span>Nominated to bring forth student feedback and advocate for curriculum improvements.</p>
                                 <h5 className="font-semibold">Grades:</h5>
                                 <ul className="list-disc pl-6">
-                                    <li>CMP301 (Graphics Programming with Shaders) - Grade Pending</li>
-                                    <li>CMP304 (Artificial Intelligence) - Grade Pending</li>
-                                    <li>CMP316 (Game Engine Development) - Grade Pending</li>
-                                    <li>DES315 (Professional Project) - Grade Pending</li>
+                                    <li>MAT101 (Applied Mathematics 1) - A+</li>
+                                    <li>CMP102 (Software Design) - A+</li>
+                                    <li>CMP101 (Computer Hardware, Architecture, and Operating Systems) - A</li>
+                                    <li>CMP104 (Programming With C++) - A</li>
+                                    <li>CMP105 (Games Programming with C++) - A</li>
                                 </ul>
                             </div>
                         </li>

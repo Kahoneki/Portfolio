@@ -131,7 +131,7 @@ function Home()
                                 carousel.map(c => (
                                     <SwiperSlide key={c.title}>
                                         <Link to={"/portfolio/" + c.title}>
-                                            <img className="object-cover h-[50vh] lg:h-5/6 w-full rounded-xl bg-sidebar" src={"Images/Thumbnails/" + c.path} alt={c.title}></img>
+                                            <img className="object-containh-[50vh] lg:h-5/6 aspect-video rounded-xl bg-sidebar" src={"Images/Thumbnails/" + c.path} alt={c.title}></img>
                                             <p className="mt-4 text-center text-text font-bold">{c.title}</p>
                                             <p className="text-center text-text mb-6">{c.description}</p>
                                         </Link>
