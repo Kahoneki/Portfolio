@@ -138,9 +138,6 @@ return (
                     <p className="text-lg italic">September 2023 - Present</p>
                     <p className="text-lg font-bold">GPA: 4.4 / 4.5</p>
                     <ul className="list-none">
-                        
-
-                        <br></br>
 
                         <li>
                             <h4 className="font-bold underline">3rd Year:</h4>
@@ -155,6 +152,8 @@ return (
                                 </ul>
                             </div>
                         </li>
+
+                        <br></br>
 
                         <li>
                             <h4 className="font-bold underline">2nd Year:</h4>
