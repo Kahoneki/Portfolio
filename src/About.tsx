@@ -145,9 +145,9 @@ return (
                                 <p><span className="font-semibold">Class Representative: </span>Re-nominated to continue advocating for student interests and providing feedback to faculty.</p>
                                 <h5 className="font-semibold">Grades:</h5>
                                 <ul className="list-disc pl-6">
-                                    <li>CMP301 (Graphics Programming with Shaders) - Grade Pending</li>
+                                    <li>CMP301 (Graphics Programming with Shaders) - A+</li>
                                     <li>CMP304 (Artificial Intelligence) - A+</li>
-                                    <li>CMP316 (Game Engine Development) - Grade Pending</li>
+                                    <li>CMP316 (Game Engine Development) - A+</li>
                                     <li>DES315 (Professional Project) - Grade Pending</li>
                                 </ul>
                             </div>
